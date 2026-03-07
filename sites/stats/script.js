@@ -5,10 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Math using BigInt for SteamID64 conversion
     const STEAM64_BASE = 76561197960265728n;
 
-    function parseInputToSteamID64s(input) {
+    function parseInput(input) {
         // split by space, comma, newline
         const tokens = input.split(/[\s,]+/).filter(t => t.trim() !== "");
         const steamID64s = [];
+        const vanityNames = [];
 
         tokens.forEach(token => {
             // Check if it's already a 17-digit SteamID64
@@ -44,38 +45,99 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Check if it's a unique vanity URL (e.g. steamcommunity.com/id/customurl/)
-            const vanityMatch = token.match(/\/id\/([^\/]+)/);
+            // Check if it's a vanity URL (e.g. steamcommunity.com/id/customurl/ or https://steamcommunity.com/id/customurl/)
+            const vanityMatch = token.match(/\/id\/([^\/\s?]+)/);
             if (vanityMatch) {
-                // We'll pass the vanity string and let the next page handle resolution
-                steamID64s.push(vanityMatch[1]);
+                vanityNames.push(vanityMatch[1]);
                 return;
             }
 
-            // Fallback: If it's none of the above, just push the raw token, maybe the search page can handle it
-            steamID64s.push(token);
+            // Fallback: treat as a potential vanity name (e.g. just "bastet-")
+            // Only if it doesn't look like a number or known format
+            if (!/^\d+$/.test(token)) {
+                vanityNames.push(token);
+            } else {
+                steamID64s.push(token);
+            }
         });
 
-        // Unique values only
-        return [...new Set(steamID64s)];
+        return {
+            steamID64s: [...new Set(steamID64s)],
+            vanityNames: [...new Set(vanityNames)]
+        };
     }
 
-    searchBtn.addEventListener("click", () => {
-        const input = searchInput.value;
-        const validIds = parseInputToSteamID64s(input);
+    async function resolveVanityName(vanityName, steamKey) {
+        try {
+            const res = await fetch(`/api/resolve?key=${steamKey}&vanityurl=${encodeURIComponent(vanityName)}`);
+            if (!res.ok) throw new Error(`HTTP ${res.status}`);
+            const data = await res.json();
+            if (data.response && data.response.success === 1 && data.response.steamid) {
+                return data.response.steamid;
+            }
+            return null;
+        } catch (e) {
+            console.error(`Failed to resolve vanity "${vanityName}":`, e);
+            return null;
+        }
+    }
 
-        if (validIds.length === 0) {
-            alert("No valid SteamIDs or Profile URLs recognized. Try providing standard SteamIDs or SteamID64s.");
+    searchBtn.addEventListener("click", async () => {
+        const input = searchInput.value;
+        const { steamID64s, vanityNames } = parseInput(input);
+
+        if (steamID64s.length === 0 && vanityNames.length === 0) {
+            alert("No valid SteamIDs or Profile URLs recognized. Try providing standard SteamIDs, SteamID64s, or vanity URLs.");
+            return;
+        }
+
+        // Get steam key for vanity resolution
+        let steamKey = "";
+        const steamMatch = document.cookie.match(/(^| )steam_key=([^;]+)/);
+        if (steamMatch) steamKey = steamMatch[2];
+
+        // Resolve vanity names if we have any
+        if (vanityNames.length > 0) {
+            if (!steamKey) {
+                alert("A Steam Web API Key is required to resolve vanity URLs. Please set one using the 'Set API Key' button.");
+                return;
+            }
+
+            searchBtn.disabled = true;
+            searchBtn.textContent = "Resolving...";
+
+            const resolvePromises = vanityNames.map(name => resolveVanityName(name, steamKey));
+            const results = await Promise.all(resolvePromises);
+
+            const failed = [];
+            results.forEach((id, i) => {
+                if (id) {
+                    steamID64s.push(id);
+                } else {
+                    failed.push(vanityNames[i]);
+                }
+            });
+
+            searchBtn.disabled = false;
+            searchBtn.textContent = "Check Stats";
+
+            if (failed.length > 0) {
+                alert(`Could not resolve the following vanity URL(s): ${failed.join(", ")}`);
+            }
+        }
+
+        const uniqueIds = [...new Set(steamID64s)];
+        if (uniqueIds.length === 0) {
+            alert("No valid SteamIDs could be resolved.");
             return;
         }
 
         // Build the query parameter string, delimited by '+'
-        const queryParam = validIds.join('+');
+        const queryParam = uniqueIds.join('+');
 
         // Get steam key if available
         let steamKeyParam = "";
-        const steamMatch = document.cookie.match(/(^| )steam_key=([^;]+)/);
-        if (steamMatch) steamKeyParam = `&steamkey=${steamMatch[2]}`;
+        if (steamKey) steamKeyParam = `&steamkey=${steamKey}`;
 
         // Get leetify key
         let leetifyKeyParam = "";
