@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bunnyware stats</title>
+    <!-- Use the same icon as the main page -->
+    <link rel="icon" href="rabbit-silhouette.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Top bar redirecting to main bunnyware page and main stats page -->
+    <nav>
+        <div class="nav-brand">
+            <a href="https://bunnyware.fun" class="logo">
+                <img src="rabbit-silhouette.svg" alt="logo" class="nav-logo-img">
+                bunnyware
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://bunnyware.fun">Main Site</a></li>
+            <li><a href="index.html" class="active">Stats Search</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="title">CS2 Stats Checker</h1>
+            <p class="subtitle">Enter Steam IDs or Profile URLs separated by spaces or commas</p>
+
+            <div class="search-container">
+                <textarea id="search-input" class="search-box"
+                    placeholder="e.g. 76561198000000000, STEAM_0:0:11101, steamcommunity.com/id/bnuyy"
+                    rows="4"></textarea>
+                <div class="button-group" style="display: flex; gap: 1rem;">
+                    <button id="search-btn" class="cta-button">Check Stats</button>
+                    <button id="api-key-btn" class="cta-button secondary">Set API Key</button>
+                </div>
+            </div>
+
+            <p class="search-helper">We parse Steam IDs, SteamID64, and Profile URLs automatically.</p>
+        </div>
+    </header>
+
+    <!-- Modal for API Key input -->
+    <div id="api-key-modal" class="modal">
+        <div class="api-modal-content">
+            <span class="close-btn" id="close-api-modal">&times;</span>
+            <h2 class="api-modal-title">API Settings</h2>
+            <p class="api-modal-desc">Configure your API keys to power the stats checker. They are saved securely in
+                your browser cookies.</p>
+
+            <div class="api-field-group" style="margin-bottom: 1.5rem;">
+                <label for="leetify-key-input"
+                    style="display: block; margin-bottom: 0.5rem; color: var(--secondary-green);">Leetify API
+                    Key</label>
+                <input type="text" id="leetify-key-input" class="api-modal-input" placeholder="e.g. ltfy_xxxxxxxxx...">
+            </div>
+
+            <div class="api-field-group" style="margin-bottom: 1.5rem;">
+                <label for="steam-key-input"
+                    style="display: block; margin-bottom: 0.5rem; color: var(--secondary-green);">Steam Web API
+                    Key</label>
+                <input type="text" id="steam-key-input" class="api-modal-input"
+                    placeholder="e.g. 32-character hex key...">
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Get one at <a
+                        href="https://steamcommunity.com/dev/apikey" target="_blank"
+                        style="color: var(--primary-green);">steamcommunity.com/dev/apikey</a></p>
+            </div>
+
+            <button id="save-api-keys" class="cta-button">Save All Keys</button>
+            <p id="api-key-status" class="api-status-msg"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

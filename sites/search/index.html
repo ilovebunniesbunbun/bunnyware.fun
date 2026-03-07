@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bunnyware stats search</title>
+    <!-- Use the same icon as the main page -->
+    <link rel="icon" href="rabbit-silhouette.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Top bar -->
+    <nav>
+        <div class="nav-brand">
+            <a href="https://bunnyware.fun" class="logo">
+                <img src="rabbit-silhouette.svg" alt="logo" class="nav-logo-img">
+                bunnyware
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://bunnyware.fun">Main Site</a></li>
+            <li><a href="https://stats.bunnyware.fun" class="active">Stats Search</a></li>
+        </ul>
+        <div class="api-key-indicator" id="api-key-indicator" style="display:none;">
+            API Key: <span class="status-dot green"></span>
+        </div>
+    </nav>
+
+    <main class="results-container">
+        <h1 class="results-title">CS2 Profiles</h1>
+        <div id="loading" class="loading-spinner">Fetching data...</div>
+        <div id="results-grid" class="results-grid"></div>
+    </main>
+
+    <!-- Template for a player card -->
+    <template id="player-card-template">
+        <div class="player-card">
+            <!-- Left Sidebar for Profile Info -->
+            <div class="card-sidebar">
+                <a href="https://leetify.com/" target="_blank" rel="noopener noreferrer" class="leetify-attribution">
+                    <img src="leetify.png" alt="Data Provided by Leetify" class="leetify-logo">
+                </a>
+                <img class="player-avatar" src="../baby_bun.png" alt="Avatar">
+                <div class="player-info">
+                    <h2 class="player-name">Player Name</h2>
+                    <p class="player-steamid">76561198...</p>
+                    <a href="#" target="_blank" rel="noopener noreferrer" class="leetify-link">View on Leetify</a>
+                </div>
+            </div>
+
+            <!-- Right Pane for Categories -->
+            <div class="card-content">
+
+                <!-- Main Stats with Progress Bars -->
+                <div class="stats-category">
+                    <h3 class="category-title">Main Stats</h3>
+
+                    <div class="stat-bar-group">
+                        <div class="stat-bar-info">
+                            <span class="stat-label">Aim</span>
+                            <span class="stat-value aim-val">0</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill aim-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-bar-group">
+                        <div class="stat-bar-info">
+                            <span class="stat-label">Positioning</span>
+                            <span class="stat-value pos-val">0</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill pos-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-bar-group">
+                        <div class="stat-bar-info">
+                            <span class="stat-label">Utility</span>
+                            <span class="stat-value util-val">0</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill util-fill"></div>
+                        </div>
+                    </div>
+
+                    <div class="stat-bar-group">
+                        <div class="stat-bar-info">
+                            <span class="stat-label">TTD</span>
+                            <span class="stat-value ttd-val">0ms</span>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill ttd-fill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rankings -->
+                <div class="stats-category">
+                    <h3 class="category-title">Rankings</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">Premier</span>
+                            <span class="stat-value premier-val">N/A</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Faceit</span>
+                            <span class="stat-value faceit-val">N/A</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other Stats -->
+                <div class="stats-category">
+                    <h3 class="category-title">Other Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">Leetify Rating</span>
+                            <span class="stat-value rating-val">+0.00</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Matches</span>
+                            <span class="stat-value match-val">0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Win Rate</span>
+                            <span class="stat-value wr-val">0%</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Preaim</span>
+                            <span class="stat-value preaim-val">0</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">Spray</span>
+                            <span class="stat-value spray-val">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

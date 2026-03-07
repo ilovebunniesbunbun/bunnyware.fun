@@ -1,0 +1,738 @@
+/* Import Comic Sans or a similar playful font */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #0d0d0d;
+    --nav-bg: rgba(13, 13, 13, 0.8);
+    --primary-green: #8cb89c;
+    /* Light grass green */
+    --secondary-green: #b9e0c8;
+    /* Lettuce green */
+    --text-color: #ffffff;
+    --text-muted: #a1a1aa;
+    --card-bg: rgba(140, 184, 156, 0.15);
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Use Comic Sans MS as requested, fallback to Comic Neue */
+    font-family: 'Comic Sans MS', 'Comic Sans', 'Comic Neue', cursive, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(to bottom, #b9e0c8 0%, #8cb89c 20%, #2a2a2a 70%, #151515 100%);
+    color: var(--text-color);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #b9e0c8e6;
+    /* Pastel Green (Secondary) */
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 2px solid var(--primary-green);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a2f23;
+    /* Dark green for visibility */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+.nav-logo-img {
+    height: 35px;
+    width: auto;
+    filter: drop-shadow(0 0 2px rgba(26, 47, 35, 0.3));
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #ffffff;
+    /* Dark green for visibility */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    text-shadow:
+        -1px -1px 0 var(--primary-green),
+        1px -1px 0 var(--primary-green),
+        -1px 1px 0 var(--primary-green),
+        1px 1px 0 var(--primary-green);
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: url('title_background.png') no-repeat center center/cover;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* Subtle darkening for white text visibility */
+    backdrop-filter: blur(2px);
+    /* Reduced background blur, focused it on the card instead */
+    pointer-events: none;
+}
+
+/* Glass Card for Title Content */
+.hero-content {
+    background: rgba(140, 184, 156, 0.15);
+    /* Match the premium green tint from other cards */
+    padding: 3rem 4rem;
+    border-radius: 8px;
+    /* Matching the sharp but clean corners */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    /* Heavy frosted glass effect inside the card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    width: 800px;
+    max-width: 90%;
+}
+
+.hero>* {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: -1rem;
+    filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.5));
+}
+
+.title {
+    font-size: 6rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 4px 4px 20px rgba(0, 0, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+
+    /* Lock the height to prevent jumping when empty */
+    line-height: 1.2;
+    min-height: 1.2em;
+
+    /* Typewriter effect styles */
+    display: inline-block;
+    border-right: .06em solid rgba(255, 255, 255, 0.8);
+    /* The typewriter cursor */
+
+    /* Padding added to ensure the drop shadow doesn't get cut off by overflow: hidden */
+    padding: 10px 25px 30px 10px;
+
+    animation: blink-caret .75s step-end infinite;
+}
+
+.title.done-typing {
+    border-right-color: transparent;
+    animation: none;
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: rgba(255, 255, 255, 0.8);
+    }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    color: #8fbba2;
+    margin-bottom: 3rem;
+}
+
+.cta-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    background: #8fbba2;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(74, 222, 128, 0.4);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.7);
+    background: var(--secondary-green);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+.cta-button.secondary {
+    background: #1a2f23;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button.secondary:hover {
+    background: #2d4f3b;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+}
+
+/* Showcase Section */
+.showcase {
+    padding: 6rem 5%;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.showcase h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.showcase-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    text-align: left;
+}
+
+.showcase-content.reverse {
+    flex-direction: row-reverse;
+}
+
+.showcase-image {
+    flex: 1 1 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: var(--card-bg);
+}
+
+.showcase-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.showcase-image:hover img {
+    transform: scale(1.02);
+}
+
+.showcase-text {
+    flex: 1 1 400px;
+    background: rgba(185, 224, 200, 0.15);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+}
+
+.showcase-text h3 {
+    font-size: 2.5rem;
+    color: #98f8c1;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #8cb89c;
+    padding-bottom: 0.5rem;
+}
+
+.showcase-text ul {
+    list-style: none;
+    padding: 0;
+}
+
+.showcase-text li {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    padding-left: 2rem;
+    position: relative;
+}
+
+.showcase-text li::before {
+    content: '🐰';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+}
+
+/* Pricing Options Section */
+.pricing-options {
+    padding: 6rem 5%;
+    text-align: center;
+}
+
+.pricing-options h2 {
+    font-size: 3rem;
+    color: #ffffff;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    flex: 1 1 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    /* Added drop shadow */
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    /* Stronger shadow on hover */
+}
+
+.pricing-card h3 {
+    font-size: 2rem;
+    color: #3b6d51;
+    margin-bottom: 1rem;
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 2rem;
+}
+
+.pricing-card .price span {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: #a1a1aa;
+}
+
+.pricing-card .price .original-price {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    color: #a1a1aa;
+    margin-right: 0.5rem;
+}
+
+.pricing-card .features-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.pricing-card .features-list li {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.pricing-card .features-list li::before {
+    content: '✅';
+    position: absolute;
+    left: 0;
+}
+
+.pricing-card .features-list li.disabled {
+    color: #666666;
+    text-decoration: line-through;
+}
+
+.pricing-card .features-list li.disabled::before {
+    content: '❌';
+}
+
+/* Checkout Section */
+.checkout {
+    padding: 6rem 5%;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.checkout h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.checkout p {
+    font-size: 1.2rem;
+    color: var(--secondary-green);
+    margin-bottom: 3rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+.premium-btn {
+    padding: 1.2rem 4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000;
+    background: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.premium-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+    background: #f0f0f0;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border: 2px solid var(--primary-green);
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(74, 222, 128, 0.3);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: var(--primary-green);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family: Arial, sans-serif;
+    /* Keep X recognizable */
+}
+
+.close-btn:hover {
+    color: #fff;
+}
+
+/* Logo link reset */
+a.logo {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 110;
+}
+
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: #1a2f23;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+    /* Nav */
+    nav {
+        padding: 1rem 5%;
+        flex-wrap: wrap;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding-top: 1rem;
+        order: 3;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 0;
+        border-top: 1px solid rgba(26, 47, 35, 0.15);
+        font-size: 1.1rem;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 120px 5% 60px 5%;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .hero-logo {
+        width: 100px;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .cta-button {
+        padding: 0.9rem 2rem;
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Showcase / Features */
+    .showcase {
+        padding: 4rem 5%;
+    }
+
+    .showcase h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .showcase-content {
+        flex-direction: column !important;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .showcase-image {
+        flex: 1 1 100%;
+    }
+
+    .showcase-text {
+        flex: 1 1 100%;
+    }
+
+    .showcase-text h3 {
+        font-size: 1.8rem;
+    }
+
+    .showcase-text li {
+        font-size: 1.1rem;
+    }
+
+    /* Pricing */
+    .pricing-options {
+        padding: 4rem 5%;
+    }
+
+    .pricing-options h2 {
+        font-size: 2rem;
+    }
+
+    .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .pricing-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 2rem 1.5rem;
+    }
+
+    .pricing-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .pricing-card .price {
+        font-size: 2rem;
+    }
+
+    /* Checkout */
+    .checkout {
+        padding: 4rem 5%;
+    }
+
+    .checkout h2 {
+        font-size: 2rem;
+    }
+
+    .checkout p {
+        font-size: 1rem;
+    }
+
+    .premium-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        max-width: 95%;
+    }
+
+    .close-btn {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 0.95rem;
+    }
+
+    .showcase h2,
+    .pricing-options h2,
+    .checkout h2 {
+        font-size: 1.6rem;
+    }
+
+    .showcase-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .pricing-card .price {
+        font-size: 1.6rem;
+    }
+}

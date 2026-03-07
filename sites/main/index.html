@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bunnyware</title>
+    <link rel="icon" href="rabbit-silhouette.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="rabbit-silhouette.svg" alt="logo" class="nav-logo-img">
+            bunnyware
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#home">home</a></li>
+            <li><a href="#features">features</a></li>
+            <li><a href="#pricing">pricing</a></li>
+            <li><a href="radar.html">radar</a></li>
+            <li><a href="https://stats.bunnyware.fun">stats</a></li>
+            <li><a href="https://search.bunnyware.fun">search</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <img src="rabbit-silhouette.svg" alt="bunnyware logo" class="hero-logo">
+            <h1 class="title">bunnyware</h1>
+            <p class="subtitle">for lettuce munchers and carrot connoisseurs</p>
+            <div class="hero-buttons">
+                <a href="#features" class="cta-button">features</a>
+                <a href="#pricing" class="cta-button">pricing</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="showcase">
+        <h2>Features</h2>
+        <div class="showcase-content">
+            <div class="showcase-image">
+                <img src="image.png" alt="ESP Settings">
+            </div>
+            <div class="showcase-text">
+                <h3>ESP</h3>
+                <ul>
+                    <li>Box</li>
+                    <li>HP Bar</li>
+                    <li>Name</li>
+                    <li>Distance</li>
+                    <li>Skeleton</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="showcase-content reverse">
+            <div class="showcase-image">
+                <img src="radar.png" alt="Radar Settings">
+            </div>
+            <div class="showcase-text">
+                <h3>Radar</h3>
+                <ul>
+                    <li>See Player Health</li>
+                    <li>Grenades</li>
+                    <li>Flash Timers</li>
+                    <li>Bomb Location</li>
+                    <li>Distinct CT vs T Icons</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="showcase-content">
+            <div class="showcase-image">
+                <img src="bunnyhop.png" alt="Bunny Hop Settings">
+            </div>
+            <div class="showcase-text">
+                <h3>Bunny Hop</h3>
+                <ul>
+                    <li>As fast as lightnight</li>
+                    <li>The tortoise wont win this time!</li>
+                    <li>Bnuyy movemint</li>
+                    <li>Xtreme edgebugs</li>
+                    <li>Superb strafes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="pricing" class="pricing-options">
+        <h2>Pricing</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Monthly</h3>
+                <div class="price">15 carrots<span>/m</span></div>
+                <ul class="features-list">
+                    <li>ESP</li>
+                    <li>Aimbot</li>
+                    <li>Radar</li>
+                    <li>Skinchanger</li>
+                    <li class="disabled">Premium Support</li>
+                </ul>
+            </div>
+            <div class="pricing-card">
+                <h3>3 Months</h3>
+                <div class="price"><span class="original-price">45</span>35 carrots<span>/3m</span></div>
+                <ul class="features-list">
+                    <li>ESP</li>
+                    <li>Aimbot</li>
+                    <li>Radar</li>
+                    <li>Skinchanger</li>
+                    <li class="disabled">Premium Support</li>
+                </ul>
+            </div>
+            <div class="pricing-card featured">
+                <h3>Lifetime</h3>
+                <div class="price">150 carrots<span>/life</span></div>
+                <ul class="features-list">
+                    <li>ESP</li>
+                    <li>Aimbot</li>
+                    <li>Radar</li>
+                    <li>Skinchanger</li>
+                    <li>Premium Support</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="checkout" class="checkout">
+        <h2>Ready to dominate?</h2>
+        <p>Get instant access to the best of lettuce.</p>
+        <!-- The button is a troll. It looks like a pay button but redirects to YouTube on click -->
+        <button id="pay-button" class="premium-btn">Purchase</button>
+    </section>
+
+    <!-- Modal for image expansion -->
+    <div id="image-modal" class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="expanded-img" alt="Expanded image">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
