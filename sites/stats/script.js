@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     async function resolveVanityName(vanityName, steamKey) {
         try {
-            const res = await fetch(`/api/resolve?key=${steamKey}&vanityurl=${encodeURIComponent(vanityName)}`);
+            const res = await fetch(`https://search.bunnyware.fun/api/resolve?key=${steamKey}&vanityurl=${encodeURIComponent(vanityName)}`);
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
             const data = await res.json();
             if (data.response && data.response.success === 1 && data.response.steamid) {
