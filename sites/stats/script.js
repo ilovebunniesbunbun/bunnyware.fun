@@ -215,4 +215,18 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 1000);
         });
     }
+    // Toggle visibility for API key inputs
+    document.querySelectorAll('.toggle-vis').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const targetId = this.getAttribute('data-target');
+            const input = document.getElementById(targetId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                this.classList.add('showing');
+            } else {
+                input.type = 'password';
+                this.classList.remove('showing');
+            }
+        });
+    });
 });

@@ -56,15 +56,24 @@
                 <label for="leetify-key-input"
                     style="display: block; margin-bottom: 0.5rem; color: var(--secondary-green);">Leetify API
                     Key</label>
-                <input type="text" id="leetify-key-input" class="api-modal-input" placeholder="e.g. ltfy_xxxxxxxxx...">
+                <div class="input-wrapper">
+                    <input type="password" id="leetify-key-input" class="api-modal-input"
+                        placeholder="e.g. ltfy_xxxxxxxxx...">
+                    <button type="button" class="toggle-vis" data-target="leetify-key-input"
+                        aria-label="Toggle visibility">👁</button>
+                </div>
             </div>
 
             <div class="api-field-group" style="margin-bottom: 1.5rem;">
                 <label for="steam-key-input"
                     style="display: block; margin-bottom: 0.5rem; color: var(--secondary-green);">Steam Web API
                     Key</label>
-                <input type="text" id="steam-key-input" class="api-modal-input"
-                    placeholder="e.g. 32-character hex key...">
+                <div class="input-wrapper">
+                    <input type="password" id="steam-key-input" class="api-modal-input"
+                        placeholder="e.g. 32-character hex key...">
+                    <button type="button" class="toggle-vis" data-target="steam-key-input"
+                        aria-label="Toggle visibility">👁</button>
+                </div>
                 <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.3rem;">Get one at <a
                         href="https://steamcommunity.com/dev/apikey" target="_blank"
                         style="color: var(--primary-green);">steamcommunity.com/dev/apikey</a></p>

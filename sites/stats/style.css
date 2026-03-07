@@ -291,6 +291,41 @@ nav {
     border-color: var(--primary-green);
 }
 
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-wrapper .api-modal-input {
+    padding-right: 3rem;
+    margin-bottom: 0;
+}
+
+.toggle-vis {
+    position: absolute;
+    right: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0.3rem;
+    line-height: 1;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.toggle-vis:hover {
+    opacity: 1;
+}
+
+.toggle-vis.showing {
+    opacity: 1;
+    color: var(--primary-green);
+}
+
 .api-status-msg {
     margin-top: 1rem;
     font-size: 1.1rem;
