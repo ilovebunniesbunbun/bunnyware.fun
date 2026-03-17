@@ -61,18 +61,288 @@
             }
         },
         {
-            "grenade_type": "molotov",
-            "title": "tetris -> under palace",
-            "description": "top corner of last white pipe",
-            "throw_type": "normal_throw",
+            "grenade_type": "flashbang",
+            "title": "sawhorse -> window",
+            "description": "where dark tile and paper meet",
+            "throw_type": "right_click_crouch_jump_throw",
             "view_angle": {
-                "x": -4.6098022460938,
-                "y": -104.97161865234
+                "x": 22.384979248047,
+                "y": 58.164367675781
             },
             "position": {
-                "x": -30.464538574219,
-                "y": -1418.03125,
+                "x": -1247.9499511719,
+                "y": -924.03125,
                 "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "he_grenade",
+            "title": "sawhorse -> window smoke break",
+            "description": "where dark tile and paper meet",
+            "throw_type": "right_click_crouch_jump_throw",
+            "view_angle": {
+                "x": 22.384979248047,
+                "y": 58.164367675781
+            },
+            "position": {
+                "x": -1247.9499511719,
+                "y": -924.03125,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "stairs pop",
+            "description": "bottom of horizontal wooden board",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -56.07250213623,
+                "y": 90.696594238281
+            },
+            "position": {
+                "x": -496.03125,
+                "y": -1309.0621337891,
+                "z": -159.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "con -> lower mid lurk",
+            "description": "middle of white paint splotch on ledge",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": 3.3000183105469,
+                "y": 80.934204101563
+            },
+            "position": {
+                "x": -727.39874267578,
+                "y": -1306.0992431641,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t ramp -> ticket",
+            "description": "start of wood sticking out",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -29.149810791016,
+                "y": -143.83609008789
+            },
+            "position": {
+                "x": 1086.2778320313,
+                "y": -1017.7663574219,
+                "z": -258.14398193359
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "palace entrance -> ticket",
+            "description": "top of the window",
+            "throw_type": "w_jump_throw",
+            "view_angle": {
+                "x": -20.597305297852,
+                "y": -141.66595458984
+            },
+            "position": {
+                "x": 1257.8504638672,
+                "y": -871.92297363281,
+                "z": -143.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "trash can -> top mid",
+            "description": "where the two rooves meet",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -29.699829101563,
+                "y": -173.703125
+            },
+            "position": {
+                "x": 1422.96875,
+                "y": 36.457866668701,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "trash can -> top mid",
+            "description": "top of the antenna base",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -39.21501159668,
+                "y": -162.59320068359
+            },
+            "position": {
+                "x": 1422.96875,
+                "y": 36.457866668701,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t spawn -> connector",
+            "description": "between carpet patterns",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -31.04736328125,
+                "y": -140.92816162109
+            },
+            "position": {
+                "x": 1135.9569091797,
+                "y": 647.94616699219,
+                "z": -259.46960449219
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "aps -> market window",
+            "description": "top corner of watch tower",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -50.627410888672,
+                "y": -146.51058959961
+            },
+            "position": {
+                "x": -160.05084228516,
+                "y": 887.96875,
+                "z": -135.328125
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "aps -> market door",
+            "description": "3rd merlon",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -46.667510986328,
+                "y": -152.25848388672
+            },
+            "position": {
+                "x": -160.03564453125,
+                "y": 887.96875,
+                "z": -135.328125
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "aps -> bench",
+            "description": "lodge self in corner aim top of 2nd window",
+            "throw_type": "crouch_throw",
+            "view_angle": {
+                "x": -11.164855957031,
+                "y": -159.21592712402
+            },
+            "position": {
+                "x": -1369.5101318359,
+                "y": 814.40985107422,
+                "z": -79.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t ramp -> stairs",
+            "description": "center of the door trim top of roof",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -64.807319641113,
+                "y": -160.2864074707
+            },
+            "position": {
+                "x": 907.82055664063,
+                "y": -1036.0897216797,
+                "z": -251.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t ramp -> bench",
+            "description": "middle of the door trim wires along corner of building",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -55.044937133789,
+                "y": -160.64379882813
+            },
+            "position": {
+                "x": 907.783203125,
+                "y": -1036.0643310547,
+                "z": -251.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "ramp -> default",
+            "description": "where the top and bottom windows line up",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -14.812316894531,
+                "y": -122.7214050293
+            },
+            "position": {
+                "x": 250.70159912109,
+                "y": -1439.2978515625,
+                "z": -175.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "tetris -> triple",
+            "description": "1st jump box aim at the divot",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -2.6573181152344,
+                "y": -135.64613342285
+            },
+            "position": {
+                "x": -48.48828125,
+                "y": -1418.0561523438,
+                "z": -119.96875
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "under palace -> ramp",
+            "description": "middle of the wood",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -7.3323364257813,
+                "y": -104.10369873047
+            },
+            "position": {
+                "x": 151.93939208984,
+                "y": -1914.03125,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "ramp -> jungle",
+            "description": "cable meets antenna",
+            "throw_type": "w_throw",
+            "view_angle": {
+                "x": -13.602447509766,
+                "y": 166.65368652344
+            },
+            "position": {
+                "x": 181.96875,
+                "y": -1717.9671630859,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t ramp ledge -> stairs",
+            "description": "dot on the brick",
+            "throw_type": "middle_click_jump_throw",
+            "view_angle": {
+                "x": -3.6749267578125,
+                "y": 178.94119262695
+            },
+            "position": {
+                "x": 814.94940185547,
+                "y": -1548.9649658203,
+                "z": -108.96875
             }
         }
     ]
