@@ -1,0 +1,79 @@
+{
+    "de_mirage": [
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "Trash -> Connector",
+            "description": "Line up on carpet and jump throw",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -20.514907836914,
+                "y": -158.33770751953
+            },
+            "position": {
+                "x": 1422.7596435547,
+                "y": 36.434120178223,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "trash -> window",
+            "description": "tap d while jump throwing",
+            "throw_type": "d_jumpthrow",
+            "view_angle": {
+                "x": -35.794830322266,
+                "y": -163.83877563477
+            },
+            "position": {
+                "x": 1389.46875,
+                "y": 70.960014343262,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "instant -> window",
+            "description": "bottom corner of facade",
+            "throw_type": "w_jump_throw",
+            "view_angle": {
+                "x": -28.912582397461,
+                "y": -165.95809936523
+            },
+            "position": {
+                "x": 1296,
+                "y": 32,
+                "z": -167.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "instant -> mid window",
+            "description": "line up where railing and door meet facade",
+            "throw_type": "w_jump_throw",
+            "view_angle": {
+                "x": -44.617889404297,
+                "y": -166.87408447266
+            },
+            "position": {
+                "x": 1216,
+                "y": -16,
+                "z": -163.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "tetris -> under palace",
+            "description": "top corner of last white pipe",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -4.6098022460938,
+                "y": -104.97161865234
+            },
+            "position": {
+                "x": -30.464538574219,
+                "y": -1418.03125,
+                "z": -167.96875
+            }
+        }
+    ]
+}
