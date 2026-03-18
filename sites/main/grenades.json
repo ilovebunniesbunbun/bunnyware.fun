@@ -345,5 +345,277 @@
                 "z": -108.96875
             }
         }
+    ],
+    "de_ancient": [
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "spawn -> elbow",
+            "description": "halfway between crack and the left U below",
+            "throw_type": "shiftwalk_jumpthrow",
+            "view_angle": {
+                "x": -30.413940429688,
+                "y": -108.90335083008
+            },
+            "position": {
+                "x": -192,
+                "y": 1696,
+                "z": 26.053039550781
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "spawn -> elbow",
+            "description": "middle of brick left of light crack",
+            "throw_type": "shiftwalk_jumpthrow",
+            "view_angle": {
+                "x": -29.166290283203,
+                "y": -107.11154937744
+            },
+            "position": {
+                "x": -256.00018310547,
+                "y": 1727.6352539063,
+                "z": 25.591926574707
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "spawn -> elbow",
+            "description": "light crack above U",
+            "throw_type": "shiftwalk_jumpthrow",
+            "view_angle": {
+                "x": -29.544296264648,
+                "y": -105.44334411621
+            },
+            "position": {
+                "x": -352,
+                "y": 1728,
+                "z": 28.813293457031
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "spawn -> elbow",
+            "description": "light crack above U to the left",
+            "throw_type": "shiftwalk_jumpthrow",
+            "view_angle": {
+                "x": -28.943145751953,
+                "y": -103.23886871338
+            },
+            "position": {
+                "x": -448,
+                "y": 1728,
+                "z": 30.739719390869
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "spawn -> elbow",
+            "description": "inside of U",
+            "throw_type": "shiftwalk_jumpthrow",
+            "view_angle": {
+                "x": -26.667602539063,
+                "y": -101.81098937988
+            },
+            "position": {
+                "x": -512,
+                "y": 1696,
+                "z": 26.837200164795
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "b doors -> long",
+            "description": "4th X from bottom on the right",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -2.989990234375,
+                "y": 87.829162597656
+            },
+            "position": {
+                "x": 1255.9704589844,
+                "y": -1483.9310302734,
+                "z": 28.702598571777
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "b doors -> cave",
+            "description": "2nd square from bottom on right",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -12.147445678711,
+                "y": 110.46170043945
+            },
+            "position": {
+                "x": 1255.9704589844,
+                "y": -1483.9310302734,
+                "z": 28.70259475708
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "b doors -> short",
+            "description": "above doors in middle",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -9.6174926757813,
+                "y": 108.59161376953
+            },
+            "position": {
+                "x": 1255.9704589844,
+                "y": -1483.9310302734,
+                "z": 28.702592849731
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "b doors -> pillar",
+            "description": "middle of square hinge on door",
+            "throw_type": "w_jump_throw",
+            "view_angle": {
+                "x": 2.2624969482422,
+                "y": 113.67895507813
+            },
+            "position": {
+                "x": 1255.9710693359,
+                "y": -1483.9715576172,
+                "z": 28.717304229736
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "b door -> pillar",
+            "description": "bottom left of the B panel",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -4.2551422119141,
+                "y": 113.43142700195
+            },
+            "position": {
+                "x": 1159.9685058594,
+                "y": -919.18206787109,
+                "z": 9.03125
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "t spawn -> mid",
+            "description": "5th brick on wall aim at tree & bottom line",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -23.285186767578,
+                "y": 84.914367675781
+            },
+            "position": {
+                "x": -735.96875,
+                "y": -1924.4727783203,
+                "z": -154.35906982422
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t spawn -> mid",
+            "description": "aim at leaf ",
+            "throw_type": "w_jump_throw",
+            "view_angle": {
+                "x": -27.727432250977,
+                "y": 92.599639892578
+            },
+            "position": {
+                "x": -392,
+                "y": -2224,
+                "z": -163.25573730469
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t spawn -> mid",
+            "description": "above leaf",
+            "throw_type": "w_jump_throw",
+            "view_angle": {
+                "x": -34.709594726563,
+                "y": 88.597869873047
+            },
+            "position": {
+                "x": -584.04968261719,
+                "y": -2288,
+                "z": -162.42346191406
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "spawn -> mid",
+            "description": "above leaf",
+            "throw_type": "w_jump_throw",
+            "view_angle": {
+                "x": -31.98600769043,
+                "y": 94.438812255859
+            },
+            "position": {
+                "x": -328,
+                "y": -2288,
+                "z": -163.25573730469
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "outside a main -> donut",
+            "description": "inside square",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -32.068405151367,
+                "y": 74.638702392578
+            },
+            "position": {
+                "x": -1934.6168212891,
+                "y": -862.02923583984,
+                "z": -0.6630859375
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "outside a main -> temple",
+            "description": "edge of brick",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -49.228698730469,
+                "y": 80.908813476563
+            },
+            "position": {
+                "x": -1934.6168212891,
+                "y": -862.02923583984,
+                "z": -0.6630859375
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "outside a main -> CT",
+            "description": "building intersects",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -43.233612060547,
+                "y": 66.773529052734
+            },
+            "position": {
+                "x": -1934.6168212891,
+                "y": -862.02923583984,
+                "z": -0.6630859375
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "b doors -> mid",
+            "description": "middle of plant",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -34.570892333984,
+                "y": 136.92602539063
+            },
+            "position": {
+                "x": 1255.9671630859,
+                "y": -1483.96875,
+                "z": 28.714799880981
+            }
+        }
     ]
 }
