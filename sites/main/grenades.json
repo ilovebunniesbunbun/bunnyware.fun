@@ -501,7 +501,7 @@
       "grenade_type": "flashbang",
       "title": "t spawn -> mid",
       "description": "5th brick on wall aim at tree & bottom line",
-      "throw_type": "normal_throw",
+      "throw_type": "jump_throw",
       "view_angle": {
         "x": -23.285186767578,
         "y": 84.914367675781
