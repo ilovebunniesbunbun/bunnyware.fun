@@ -2391,5 +2391,397 @@
                 "z": 2.03125
             }
         }
+    ],
+    "de_dust2": [
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t spawn -> mid",
+            "description": "line up crack on the railing aim at dot on wall",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -10.064849853516,
+                "y": 88.460205078125
+            },
+            "position": {
+                "x": -452.74938964844,
+                "y": -660.08544921875,
+                "z": 117.39163970947
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t spawn -> mid doors",
+            "description": "line up with railing wall aim at dot",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -15.097625732422,
+                "y": 92.77783203125
+            },
+            "position": {
+                "x": -343.89025878906,
+                "y": -660.06457519531,
+                "z": 89.581809997559
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "long doors -> long",
+            "description": "aim at wall between the tree",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -6.5725708007812,
+                "y": 51.470611572266
+            },
+            "position": {
+                "x": 363.95101928711,
+                "y": -382.80499267578,
+                "z": 6.3382377624512
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "long doors -> long pop",
+            "description": "top of door",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -14.877548217773,
+                "y": 89.91552734375
+            },
+            "position": {
+                "x": 640.48400878906,
+                "y": -186.74719238281,
+                "z": -1.7733154296875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "long -> car",
+            "description": "door handle",
+            "throw_type": "w_jump_throw",
+            "view_angle": {
+                "x": 5.74755859375,
+                "y": 53.257934570312
+            },
+            "position": {
+                "x": 847.20123291016,
+                "y": 790.06256103516,
+                "z": 47.03125
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "long -> cross",
+            "description": "corner of blue corner of two buildings",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -55.687294006348,
+                "y": 83.617980957031
+            },
+            "position": {
+                "x": 911.95745849609,
+                "y": 1070.927734375,
+                "z": 1.0384001731873
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "long -> short",
+            "description": "top of blue",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -62.150001525879,
+                "y": 127.59039306641
+            },
+            "position": {
+                "x": 916.03125,
+                "y": 1123.9483642578,
+                "z": 1.4167823791504
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "ct -> long doors",
+            "description": "roof where cable lines up",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -53.212280273438,
+                "y": -91.964492797852
+            },
+            "position": {
+                "x": 769.73956298828,
+                "y": 2379.9606933594,
+                "z": -35.552307128906
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "elevator -> long",
+            "description": "corner of elevator then corner of building roof",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -11.522247314453,
+                "y": -48.296936035156
+            },
+            "position": {
+                "x": 1024.8890380859,
+                "y": 2283.9677734375,
+                "z": 20.935020446777
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "ct -> long doors",
+            "description": "middle of 4 windows",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -60.829582214355,
+                "y": -92.901763916016
+            },
+            "position": {
+                "x": 732.22485351562,
+                "y": 2344.9375,
+                "z": -47.471618652344
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "xbox -> ct mid to b",
+            "description": "right of the nail",
+            "throw_type": "crouch_jump_throw",
+            "view_angle": {
+                "x": -11.466979980469,
+                "y": 129.57379150391
+            },
+            "position": {
+                "x": -275.04162597656,
+                "y": 1345.3489990234,
+                "z": -122.771484375
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "xbox -> mid doors pop",
+            "description": "corner of xbox",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -37.701995849609,
+                "y": 60.108947753906
+            },
+            "position": {
+                "x": -275.03948974609,
+                "y": 1345.3160400391,
+                "z": -122.771484375
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "outside tuns -> b window",
+            "description": "between two vertical dots",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -49.884777069092,
+                "y": 89.066543579102
+            },
+            "position": {
+                "x": -1332.0393066406,
+                "y": 491.94293212891,
+                "z": 8.03125
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "outside tuns -> b doors",
+            "description": "edge of scrape",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -59.867248535156,
+                "y": 88.874237060547
+            },
+            "position": {
+                "x": -1332.0393066406,
+                "y": 491.94293212891,
+                "z": 8.03125
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t spawn -> xbox",
+            "description": "corner of building",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -11.880004882812,
+                "y": 90.352600097656
+            },
+            "position": {
+                "x": -299.96899414062,
+                "y": -1163.9705810547,
+                "z": 77.683418273926
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "long doors -> top mid",
+            "description": "bottom middle of blue door",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -28.259918212891,
+                "y": 170.15866088867
+            },
+            "position": {
+                "x": 472.65682983398,
+                "y": 98.201377868652,
+                "z": -4.7730712890625
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "lower -> cat stairs",
+            "description": "top left of box",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": 5.4550476074219,
+                "y": 9.55810546875
+            },
+            "position": {
+                "x": -556.06060791016,
+                "y": 1375.3666992188,
+                "z": -112.365234375
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "upper -> b lurk",
+            "description": "upper left wall",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -5.5724792480469,
+                "y": 112.41040039062
+            },
+            "position": {
+                "x": -1785.2873535156,
+                "y": 1016.3052978516,
+                "z": 39.538379669189
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "upper -> b pop",
+            "description": "above arch",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -16.737335205078,
+                "y": 102.53814697266
+            },
+            "position": {
+                "x": -1837.9725341797,
+                "y": 982.03442382812,
+                "z": 40.583168029785
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "upper -> b",
+            "description": "right of plant",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -24.987365722656,
+                "y": 89.830047607422
+            },
+            "position": {
+                "x": -1705.96875,
+                "y": 884.37731933594,
+                "z": 34.023616790771
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "upper -> b window",
+            "description": "line up with pillar",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -62.085113525391,
+                "y": 76.300384521484
+            },
+            "position": {
+                "x": -1730.6595458984,
+                "y": 1064.0534667969,
+                "z": 32.680076599121
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "mid doors -> b site",
+            "description": "electrical pole",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -35.052215576172,
+                "y": 178.62774658203
+            },
+            "position": {
+                "x": -569.96875,
+                "y": 2095.4533691406,
+                "z": -118.41284179688
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "mid doors -> b site",
+            "description": "aim at rock",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -4.9668579101562,
+                "y": 177.96786499023
+            },
+            "position": {
+                "x": -586.33526611328,
+                "y": 2440.978515625,
+                "z": -88.381896972656
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "window -> site",
+            "description": "middle right of scaffolding",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -1.6393737792969,
+                "y": 12.802505493164
+            },
+            "position": {
+                "x": -1273.9694824219,
+                "y": 2575.96875,
+                "z": 70.39680480957
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "cat -> short lurk",
+            "description": "at ledge",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -6.1767272949219,
+                "y": 88.311889648438
+            },
+            "position": {
+                "x": 489.95159912109,
+                "y": 1446.0625,
+                "z": 0.5533709526062
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "cat stairs",
+            "description": "top of arabic",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -7.8541870117188,
+                "y": -65.550956726074
+            },
+            "position": {
+                "x": 47.96875,
+                "y": 1581.9538574219,
+                "z": 1.5163636207581
+            }
+        }
     ]
 }
