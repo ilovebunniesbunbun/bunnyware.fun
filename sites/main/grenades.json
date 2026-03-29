@@ -2783,5 +2783,412 @@
                 "z": 1.5163636207581
             }
         }
+    ],
+    "de_nuke": [
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "ct -> red cross",
+            "description": "top electrical line",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -17.7099609375,
+                "y": -137.56771850586
+            },
+            "position": {
+                "x": 1791.9678955078,
+                "y": -960.564453125,
+                "z": -351.96875
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "mini -> outside",
+            "description": "3rd line on garage",
+            "throw_type": "middle_click_jump_throw",
+            "view_angle": {
+                "x": -3.6299438476562,
+                "y": -152.71990966797
+            },
+            "position": {
+                "x": 1040.3150634766,
+                "y": -1538.8948974609,
+                "z": -407.96875
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "hut -> site",
+            "description": "top left of electrical box",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -3.4102172851562,
+                "y": 29.080123901367
+            },
+            "position": {
+                "x": 160.03125,
+                "y": -1119.9671630859,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "trophy -> ramp",
+            "description": "top of garage",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -4.0426330566406,
+                "y": 61.860229492188
+            },
+            "position": {
+                "x": 118.04103851318,
+                "y": -262.10009765625,
+                "z": -415.46875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "ct -> vent drop",
+            "description": "break window edge of metal and concrete",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -14.070053100586,
+                "y": -11.784896850586
+            },
+            "position": {
+                "x": -891.96875,
+                "y": -927.03106689453,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> outside 2",
+            "description": " ",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -34.750091552734,
+                "y": -24.572631835938
+            },
+            "position": {
+                "x": -1268.0629882812,
+                "y": -1162.0693359375,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> outside 1",
+            "description": "bottom left corner of window",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -45.392425537109,
+                "y": -26.22265625
+            },
+            "position": {
+                "x": -1268.0629882812,
+                "y": -1162.0693359375,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> vent drop",
+            "description": "break window first",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -18.772552490234,
+                "y": -12.197570800781
+            },
+            "position": {
+                "x": -1014.03125,
+                "y": -876.04431152344,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> outside wall 2",
+            "description": "corner of building",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -27.627182006836,
+                "y": -22.536743164062
+            },
+            "position": {
+                "x": -1350.3472900391,
+                "y": -1037.4602050781,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> outside wall 1",
+            "description": "below light",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -42.917404174805,
+                "y": -19.97932434082
+            },
+            "position": {
+                "x": -1350.3472900391,
+                "y": -1037.4602050781,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> secret",
+            "description": "bottom left of pipes",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -11.264770507812,
+                "y": -29.742050170898
+            },
+            "position": {
+                "x": -917.64099121094,
+                "y": -1142.9372558594,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> garage",
+            "description": "top left of silo",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -15.444717407227,
+                "y": -16.871917724609
+            },
+            "position": {
+                "x": -917.64099121094,
+                "y": -1142.9372558594,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> heaven",
+            "description": "ac unit metal line left of ladder",
+            "throw_type": "w_shift_jumpthrow",
+            "view_angle": {
+                "x": -26.719787597656,
+                "y": 21.18782043457
+            },
+            "position": {
+                "x": -891.96826171875,
+                "y": -1263.970703125,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> top hut",
+            "description": "bottom of window",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -14.949981689453,
+                "y": 3.01025390625
+            },
+            "position": {
+                "x": -891.96875,
+                "y": -1263.9682617188,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> outside wall 2",
+            "description": " ",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -16.51725769043,
+                "y": -8.897216796875
+            },
+            "position": {
+                "x": -732.87640380859,
+                "y": -1322.1385498047,
+                "z": -407.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t -> outside wall 1",
+            "description": " ",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": -17.974670410156,
+                "y": -11.262023925781
+            },
+            "position": {
+                "x": -732.87640380859,
+                "y": -1322.1385498047,
+                "z": -407.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "t outside -> red",
+            "description": "top electrical line",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -19.707061767578,
+                "y": -20.694458007812
+            },
+            "position": {
+                "x": -418.48919677734,
+                "y": -1754.0339355469,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t outside -> garage",
+            "description": "above vent",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -16.104919433594,
+                "y": 0.89297485351562
+            },
+            "position": {
+                "x": -167.42834472656,
+                "y": -1954.201171875,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "t outside -> toxic cross",
+            "description": "top right corner ",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -26.004974365234,
+                "y": 19.455749511719
+            },
+            "position": {
+                "x": -8.6104125976562,
+                "y": -2006.302734375,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "t outside -> secret",
+            "description": "top left of building",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -17.259857177734,
+                "y": -16.487045288086
+            },
+            "position": {
+                "x": 175.99331665039,
+                "y": -2046.4606933594,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "t outside -> credit",
+            "description": "bottom right of garage door",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": 4.4377899169922,
+                "y": 15.083190917969
+            },
+            "position": {
+                "x": 176.93846130371,
+                "y": -1940.0307617188,
+                "z": -415.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "t roof -> gandalf",
+            "description": "middle of white",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": 8.8374633789062,
+                "y": -6.2289123535156
+            },
+            "position": {
+                "x": -224.68206787109,
+                "y": -593.65637207031,
+                "z": -105.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "t roof -> site",
+            "description": "middle of window below first railing",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": 4.8775939941406,
+                "y": 11.261672973633
+            },
+            "position": {
+                "x": 7.0381121635437,
+                "y": -768.99188232422,
+                "z": -95.96875
+            }
+        },
+        {
+            "grenade_type": "molotov",
+            "title": "t roof -> top of hut",
+            "description": "bottom of white stripe",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": 6.9948577880859,
+                "y": -6.2841796875
+            },
+            "position": {
+                "x": -80.295227050781,
+                "y": -1054.5190429688,
+                "z": -91.46875
+            }
+        },
+        {
+            "grenade_type": "smoke_grenade",
+            "title": "container -> garage",
+            "description": " ",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -33.127414703369,
+                "y": -14.589420318604
+            },
+            "position": {
+                "x": -362.60461425781,
+                "y": -1444.6225585938,
+                "z": -287.96875
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "ramp -> trophy pop",
+            "description": "under vertical rail",
+            "throw_type": "jump_throw",
+            "view_angle": {
+                "x": 12.495239257812,
+                "y": -118.6217880249
+            },
+            "position": {
+                "x": 589.01489257812,
+                "y": 609.12371826172,
+                "z": -478.96875
+            }
+        },
+        {
+            "grenade_type": "flashbang",
+            "title": "heaven -> site pop",
+            "description": "under person on white border",
+            "throw_type": "normal_throw",
+            "view_angle": {
+                "x": -23.942291259766,
+                "y": -13.653594970703
+            },
+            "position": {
+                "x": 1259.9392089844,
+                "y": -316.03125,
+                "z": -127.96875
+            }
+        }
     ]
 }
