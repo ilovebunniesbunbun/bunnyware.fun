@@ -5002,5 +5002,576 @@
         "jump": true
       }
     }
+  ],
+  "de_cache": [
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "t spawn -> Z",
+      "description": "top left of H",
+      "position": {
+        "x": 2300.96875,
+        "y": 232.00401306152344,
+        "z": 1664.03125
+      },
+      "view_angle": {
+        "x": -18.601423263549805,
+        "y": -175.59996032714844
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "t spawn -> z",
+      "description": "top of I",
+      "position": {
+        "x": 2316.954345703125,
+        "y": 339.96875,
+        "z": 1616.0301513671875
+      },
+      "view_angle": {
+        "x": -22.07744026184082,
+        "y": -171.06800842285156
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": "w",
+        "movement_ticks": 2,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "T Spawn -> Whitebox",
+      "description": "top of I",
+      "position": {
+        "x": 2277.96875,
+        "y": 478.0379943847656,
+        "z": 1616.030029296875
+      },
+      "view_angle": {
+        "x": -23.815452575683594,
+        "y": -179.40603637695312
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": "w",
+        "movement_ticks": 9,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Truck -> Highway",
+      "description": "idfk its in the air thx map guide",
+      "position": {
+        "x": 1865.12451171875,
+        "y": 587.9373168945312,
+        "z": 1608.03125
+      },
+      "view_angle": {
+        "x": -48.54344177246094,
+        "y": 168.86782836914062
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Outside A -> Back A Site",
+      "description": "base of platform",
+      "position": {
+        "x": 1704.0189208984375,
+        "y": 524.0625610351562,
+        "z": 1612.03173828125
+      },
+      "view_angle": {
+        "x": -34.68341827392578,
+        "y": 154.3255615234375
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Outside A -> NBK",
+      "description": "first rail on plat",
+      "position": {
+        "x": 1282.148681640625,
+        "y": 522.0363159179688,
+        "z": 1612.0316162109375
+      },
+      "view_angle": {
+        "x": -56.26552963256836,
+        "y": 131.6656951904297
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Outside A -> Highway + Catwalk",
+      "description": "idk its in the air bruh",
+      "position": {
+        "x": 1217.96875,
+        "y": 522.0396118164062,
+        "z": 1612.0316162109375
+      },
+      "view_angle": {
+        "x": -65.1094970703125,
+        "y": 155.86575317382812
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "Outside A -> Sandbags",
+      "description": "third step + metal wall",
+      "position": {
+        "x": 1339.6295166015625,
+        "y": 957.96875,
+        "z": 1612.03125
+      },
+      "view_angle": {
+        "x": 3.244872808456421,
+        "y": -142.0509033203125
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [
+          "shift"
+        ],
+        "movement_key": "w",
+        "movement_ticks": 24,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Garage -> Mid Block 2",
+      "description": "middle top of panel",
+      "position": {
+        "x": 1713.951904296875,
+        "y": 307.91998291015625,
+        "z": 1612.03125
+      },
+      "view_angle": {
+        "x": -9.867146492004395,
+        "y": -173.9728546142578
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Garage -> Mid Block 1",
+      "description": "Top Middle of Right Panel",
+      "position": {
+        "x": 1713.947265625,
+        "y": 196.0574951171875,
+        "z": 1612.03125
+      },
+      "view_angle": {
+        "x": -9.84514331817627,
+        "y": 173.79510498046875
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "Garage -> Sandbags",
+      "description": "top of roof and crack",
+      "position": {
+        "x": 834.030029296875,
+        "y": 307.9661865234375,
+        "z": 1612.03125
+      },
+      "view_angle": {
+        "x": -20.823131561279297,
+        "y": -147.27853393554688
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "Vent -> Whitebox",
+      "description": "bottom of lamp post",
+      "position": {
+        "x": 614.03125,
+        "y": -142.96783447265625,
+        "z": 1718.376708984375
+      },
+      "view_angle": {
+        "x": -5.533132076263428,
+        "y": 133.52125549316406
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Outside Z -> Garage",
+      "description": "middle of spool",
+      "position": {
+        "x": -313.939208984375,
+        "y": -142.96875,
+        "z": 1612.03125
+      },
+      "view_angle": {
+        "x": 3.5968713760375977,
+        "y": 17.691905975341797
+      },
+      "movement": {
+        "throwtype": "middle",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "Outside Z -> Mid Boost",
+      "description": "bottom right of metal roof",
+      "position": {
+        "x": -275.54571533203125,
+        "y": -93.59375,
+        "z": 1664.65625
+      },
+      "view_angle": {
+        "x": -0.4951102137565613,
+        "y": 29.373876571655273
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Back Site -> A Main",
+      "description": "Middle of Mesh",
+      "position": {
+        "x": -423.92523193359375,
+        "y": 2257.94970703125,
+        "z": 1726.03125
+      },
+      "view_angle": {
+        "x": -1.5731167793273926,
+        "y": -35.56931686401367
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Truck -> A Main",
+      "description": "top right of sign",
+      "position": {
+        "x": -1039.9373779296875,
+        "y": 1437.9581298828125,
+        "z": 1688.03125
+      },
+      "view_angle": {
+        "x": -38.401058197021484,
+        "y": 11.026890754699707
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "Truck -> A Main",
+      "description": "top of building",
+      "position": {
+        "x": -916.03125,
+        "y": 1089.1646728515625,
+        "z": 1691.3525390625
+      },
+      "view_angle": {
+        "x": -20.383031845092773,
+        "y": 22.532896041870117
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "CT -> Garage",
+      "description": "at the railing",
+      "position": {
+        "x": -1742.93212890625,
+        "y": 163.7666015625,
+        "z": 1616.03125
+      },
+      "view_angle": {
+        "x": -27.556102752685547,
+        "y": 1.4274439811706543
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "CT -> B Main",
+      "description": "its in the air idfk",
+      "position": {
+        "x": -1742.9344482421875,
+        "y": 316.9526062011719,
+        "z": 1614.03125
+      },
+      "view_angle": {
+        "x": -35.85009765625,
+        "y": -27.81047248840332
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "smoke_grenade",
+      "title": "CT -> A Main",
+      "description": "Top of Door",
+      "position": {
+        "x": -1151.96923828125,
+        "y": 310.9171447753906,
+        "z": 1616.03125
+      },
+      "view_angle": {
+        "x": -22.342071533203125,
+        "y": 42.127601623535156
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "B Site -> Sunroom",
+      "description": "top of concrete",
+      "position": {
+        "x": -258.53125,
+        "y": -1526.4620361328125,
+        "z": 1660.03125
+      },
+      "view_angle": {
+        "x": -21.748077392578125,
+        "y": 3.25384259223938
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "B Site -> Sunroom 2",
+      "description": "Top of Concrete",
+      "position": {
+        "x": -258.527587890625,
+        "y": -1526.4586181640625,
+        "z": 1660.03125
+      },
+      "view_angle": {
+        "x": -20.186065673828125,
+        "y": 30.423860549926758
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "flashbang",
+      "title": "Sunroom -> B Pop",
+      "description": "top of signage on door",
+      "position": {
+        "x": 823.96044921875,
+        "y": -1435.9371337890625,
+        "z": 1612.03125
+      },
+      "view_angle": {
+        "x": -2.6657469272613525,
+        "y": 160.20425415039062
+      },
+      "movement": {
+        "throwtype": "middle",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "Sunroom -> Triple",
+      "description": "top right of window",
+      "position": {
+        "x": 961.062744140625,
+        "y": -1449.968017578125,
+        "z": 1648.03125
+      },
+      "view_angle": {
+        "x": -20.947725296020508,
+        "y": 168.8202362060547
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "Sunroom -> Triple",
+      "description": "at box",
+      "position": {
+        "x": 961.062744140625,
+        "y": -1449.968017578125,
+        "z": 1648.03125
+      },
+      "view_angle": {
+        "x": 5.386266708374023,
+        "y": 170.72789001464844
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": true
+      }
+    },
+    {
+      "grenade_type": "molotov",
+      "title": "Sunroom -> B Site",
+      "description": "top of window at middle",
+      "position": {
+        "x": 1165.9384765625,
+        "y": -1449.9725341796875,
+        "z": 1648.03125
+      },
+      "view_angle": {
+        "x": -24.555740356445312,
+        "y": 173.43392944335938
+      },
+      "movement": {
+        "throwtype": "left",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    },
+    {
+      "grenade_type": "flashbang",
+      "title": "A Main -> Entry pop",
+      "description": "roof where scaffolding combine",
+      "position": {
+        "x": 786.9649658203125,
+        "y": 1192.58203125,
+        "z": 1700.03125
+      },
+      "view_angle": {
+        "x": -32.123775482177734,
+        "y": 121.43972778320312
+      },
+      "movement": {
+        "throwtype": "middle",
+        "modifiers": [],
+        "movement_key": null,
+        "movement_ticks": 0,
+        "jump": false
+      }
+    }
   ]
 }
