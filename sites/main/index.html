@@ -1,150 +1,2203 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bunnyware</title>
+    <title>bunnyware — High-Performance CS2 Linux Utility</title>
+    <meta name="description" content="A high-performance external utility for Counter-Strike 2 on Linux. Features GPU-skinned 3D player chams, dual-stage depth occlusion, legit aimbot, seed-aware triggerbot, and evdev hardware input emulation.">
     <link rel="icon" href="rabbit-silhouette.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav>
-        <a href="index.html" class="logo">
-            <img src="rabbit-silhouette.svg" alt="logo" class="nav-logo-img">
-            bunnyware
-        </a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="#home">home</a></li>
-            <li><a href="#features">features</a></li>
-            <li><a href="#pricing">pricing</a></li>
-            <li><a href="radar.html">radar</a></li>
-            <li><a href="https://stats.bunnyware.fun">stats</a></li>
-            <li><a href="https://search.bunnyware.fun">search</a></li>
-        </ul>
+    <!-- Top Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#overview" class="nav-brand">
+                <img src="rabbit-silhouette.svg" alt="bunnyware logo" class="nav-brand-logo">
+                <span>bunnyware</span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#overview" class="nav-link">Overview</a></li>
+                <li><a href="#gui-showcase" class="nav-link">GUI Showcase</a></li>
+                <li><a href="#features" class="nav-link">Architecture</a></li>
+                <li><a href="#build" class="nav-link">How to Build</a></li>
+                <li><a href="#downloads" class="nav-link">Downloads</a></li>
+                <li><a href="grenades.json" class="nav-link" target="_blank">grenades.json</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://github.com/ilovebunniesbunbun/bunnyware" target="_blank" rel="noopener noreferrer" class="btn-github">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <img src="rabbit-silhouette.svg" alt="bunnyware logo" class="hero-logo">
-            <h1 class="title">bunnyware</h1>
-            <p class="subtitle">for lettuce munchers and carrot connoisseurs</p>
-            <div class="hero-buttons">
-                <a href="#features" class="cta-button">features</a>
-                <a href="#pricing" class="cta-button">pricing</a>
+    <!-- Hero Section -->
+    <header id="overview" class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <h1 class="hero-title">
+                    bunnyware <span class="title-accent">CS2</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    A high-performance external utility for Counter-Strike 2 on Linux. Features GPU-skinned 3D player chams, dual-stage depth occlusion, legit aimbot with target prediction, seed-aware hitchance triggerbot, and direct kernel evdev hardware input injection.
+                </p>
+
+                <div class="hero-ctas">
+                    <a href="#downloads" class="btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        <span>Download Release</span>
+                    </a>
+                    <a href="#gui-showcase" class="btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                        <span>Interactive GUI</span>
+                    </a>
+                    <a href="#build" class="btn-secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                        <span>Build Guide</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-art-card">
+                    <img src="rabbit-silhouette.svg" alt="bunnyware emblem" class="hero-art-logo">
+                    <div class="hero-art-caption">
+                        BUNNYWARE EXTERNAL <span>CS2 V2.0</span>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <section id="features" class="showcase">
-        <h2>Features</h2>
-        <div class="showcase-content">
-            <div class="showcase-image">
-                <img src="image.png" alt="ESP Settings">
+    <!-- Stats Bar -->
+    <div class="stats-strip">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">144+ FPS</div>
+                <div class="stat-label">Zero-alloc OpenGL Overlay</div>
             </div>
-            <div class="showcase-text">
-                <h3>ESP</h3>
-                <ul>
-                    <li>Box</li>
-                    <li>HP Bar</li>
-                    <li>Name</li>
-                    <li>Distance</li>
-                    <li>Skeleton</li>
-                </ul>
+            <div class="stat-item">
+                <div class="stat-value">0.0 ms</div>
+                <div class="stat-label">Direct evdev Kernel Dispatch</div>
             </div>
-        </div>
-
-        <div class="showcase-content reverse">
-            <div class="showcase-image">
-                <img src="radar.png" alt="Radar Settings">
+            <div class="stat-item">
+                <div class="stat-value">1,000+</div>
+                <div class="stat-label">Cloud Lineups (grenades.json)</div>
             </div>
-            <div class="showcase-text">
-                <h3>Radar</h3>
-                <ul>
-                    <li>See Player Health</li>
-                    <li>Grenades</li>
-                    <li>Flash Timers</li>
-                    <li>Bomb Location</li>
-                    <li>Distinct CT vs T Icons</li>
-                </ul>
+            <div class="stat-item">
+                <div class="stat-value">Wayland &amp; X11</div>
+                <div class="stat-label">Full Hyprland Compatibility</div>
             </div>
         </div>
-
-        <div class="showcase-content">
-            <div class="showcase-image">
-                <img src="bunnyhop.png" alt="Bunny Hop Settings">
-            </div>
-            <div class="showcase-text">
-                <h3>Bunny Hop</h3>
-                <ul>
-                    <li>As fast as lightnight</li>
-                    <li>The tortoise wont win this time!</li>
-                    <li>Bnuyy movemint</li>
-                    <li>Xtreme edgebugs</li>
-                    <li>Superb strafes</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <section id="pricing" class="pricing-options">
-        <h2>Pricing</h2>
-        <div class="pricing-grid">
-            <div class="pricing-card">
-                <h3>Monthly</h3>
-                <div class="price">15 carrots<span>/m</span></div>
-                <ul class="features-list">
-                    <li>ESP</li>
-                    <li>Aimbot</li>
-                    <li>Radar</li>
-                    <li>Skinchanger</li>
-                    <li class="disabled">Premium Support</li>
-                </ul>
-            </div>
-            <div class="pricing-card">
-                <h3>3 Months</h3>
-                <div class="price"><span class="original-price">45</span>35 carrots<span>/3m</span></div>
-                <ul class="features-list">
-                    <li>ESP</li>
-                    <li>Aimbot</li>
-                    <li>Radar</li>
-                    <li>Skinchanger</li>
-                    <li class="disabled">Premium Support</li>
-                </ul>
-            </div>
-            <div class="pricing-card featured">
-                <h3>Lifetime</h3>
-                <div class="price">150 carrots<span>/life</span></div>
-                <ul class="features-list">
-                    <li>ESP</li>
-                    <li>Aimbot</li>
-                    <li>Radar</li>
-                    <li>Skinchanger</li>
-                    <li>Premium Support</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="checkout" class="checkout">
-        <h2>Ready to dominate?</h2>
-        <p>Get instant access to the best of lettuce.</p>
-        <!-- The button is a troll. It looks like a pay button but redirects to YouTube on click -->
-        <button id="pay-button" class="premium-btn">Purchase</button>
-    </section>
-
-    <!-- Modal for image expansion -->
-    <div id="image-modal" class="modal">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="expanded-img" alt="Expanded image">
     </div>
+
+    <!-- Interactive GUI Showcase Section -->
+    <section id="gui-showcase" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Interactive Preview</span>
+                <h2 class="section-title">Dear ImGui Control Panel</h2>
+                <p class="section-subtitle">
+                    Full replica of the standalone settings menu running alongside the transparent game overlay with shared OpenGL contexts. All 7 configuration categories and options are functional below.
+                </p>
+            </div>
+
+            <!-- Authentic Replica of Bunnyware Window -->
+            <div class="gui-showcase-wrapper">
+                <!-- Window Titlebar -->
+                <div class="gui-titlebar">
+                    <div class="gui-title-text">
+                        <img src="rabbit-silhouette.svg" alt="logo">
+                        <span>Bunnyware</span>
+                    </div>
+                    <div class="gui-window-controls">
+                        <button class="gui-win-btn minimize" aria-label="Minimize">
+                            <svg width="10" height="2" viewBox="0 0 10 2"><rect width="10" height="2" fill="currentColor"/></svg>
+                        </button>
+                        <button class="gui-win-btn close" aria-label="Close">
+                            <svg width="10" height="10" viewBox="0 0 10 10"><path d="M1.5 1.5L8.5 8.5M8.5 1.5L1.5 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Window Body: Sidebar + Dynamic Content -->
+                <div class="gui-body">
+                    <!-- 7 Tabs Sidebar matching the user's GUI -->
+                    <div class="gui-sidebar">
+                        <div class="gui-sidebar-pill" id="gui-sidebar-pill"></div>
+                        <button class="gui-tab-btn" data-tab="aim">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="22" x2="18" y1="12" y2="12"/>
+                                <line x1="6" x2="2" y1="12" y2="12"/>
+                                <line x1="12" x2="12" y1="6" y2="2"/>
+                                <line x1="12" x2="12" y1="22" y2="18"/>
+                            </svg>
+                            <span>Aim</span>
+                        </button>
+                        <button class="gui-tab-btn active" data-tab="visuals">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                            <span>Visuals</span>
+                        </button>
+                        <button class="gui-tab-btn" data-tab="world">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                                <path d="M2 12h20"/>
+                            </svg>
+                            <span>World</span>
+                        </button>
+                        <button class="gui-tab-btn" data-tab="grenades">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="13" r="9"/>
+                                <path d="M14.35 4.65 16.3 2.7a2.41 2.41 0 0 1 3.4 0l1.6 1.6a2.4 2.4 0 0 1 0 3.4l-1.95 1.95"/>
+                                <path d="m22 2-1.5 1.5"/>
+                            </svg>
+                            <span>Grenades</span>
+                        </button>
+                        <button class="gui-tab-btn" data-tab="misc">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/>
+                                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                                <circle cx="17.5" cy="17.5" r="3.5"/>
+                            </svg>
+                            <span>Misc</span>
+                        </button>
+                        <button class="gui-tab-btn" data-tab="config">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 8a1 1 0 0 1-1-1V2a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8z"/>
+                                <path d="M20 8v12a2 2 0 0 1-2 2h-4.182"/>
+                                <path d="m3.305 19.53.923-.382"/>
+                                <path d="M4 10.592V4a2 2 0 0 1 2-2h8"/>
+                                <path d="m4.228 16.852-.924-.383"/>
+                                <circle cx="7" cy="18" r="3"/>
+                            </svg>
+                            <span>Config</span>
+                        </button>
+                        <button class="gui-tab-btn" data-tab="debug">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20v-9"/>
+                                <path d="M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z"/>
+                                <path d="M14.12 3.88 16 2"/>
+                                <path d="M21 21a4 4 0 0 0-3.81-4"/>
+                                <path d="M21 5a4 4 0 0 1-3.55 3.97"/>
+                                <path d="M22 13h-4"/>
+                                <path d="M3 21a4 4 0 0 1 3.81-4"/>
+                                <path d="M3 5a4 4 0 0 0 3.55 3.97"/>
+                                <path d="M6 13H2"/>
+                                <path d="m8 2 1.88 1.88"/>
+                                <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13"/>
+                            </svg>
+                            <span>Debug</span>
+                        </button>
+                    </div>
+
+                    <!-- Content Panes -->
+                    <div class="gui-content-pane">
+                        <!-- 1. AIM TAB -->
+                        <div class="gui-tab-view" id="tab-view-aim">
+                            <div class="gui-section-group" style="margin-bottom:1rem;">
+                                <div class="gui-section-header">Weapon Category Profile</div>
+                                <div class="gui-card" style="padding:0.6rem 0.8rem;">
+                                    <div class="gui-control-row">
+                                        <select class="gui-select">
+                                            <option selected>Rifles (AK-47, M4A4, M4A1-S, Galil, FAMAS, SG 553, AUG)</option>
+                                            <option>Light Pistols (Glock, USP-S, P2000, Dualies, P250)</option>
+                                            <option>Heavy Pistols (Desert Eagle, R8 Revolver)</option>
+                                            <option>SMGs (MAC-10, MP9, MP7, MP5-SD, UMP-45, P90, Bizon)</option>
+                                            <option>Scout (SSG 08)</option>
+                                            <option>AWP</option>
+                                            <option>Auto Snipers (SCAR-20, G3SG1)</option>
+                                            <option>Shotguns (Nova, XM1014, MAG-7, Sawed-Off)</option>
+                                            <option>LMGs (M249, Negev)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="gui-sections-grid">
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">General Targeting</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-1" class="gui-label">Enable Aimbot</label>
+                                                <label for="gui-toggle-1" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-1" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-2" class="gui-label">Enable Triggerbot</label>
+                                                <label for="gui-toggle-2" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-2" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-3" class="gui-label">Magnet Trigger</label>
+                                                <label for="gui-toggle-3" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-3">
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-sub-divider"></div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Aim Key</span>
+                                                <button class="gui-btn">Mouse 1</button>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Trigger Key</span>
+                                                <button class="gui-btn">Mouse 5</button>
+                                            </div>
+                                            <div class="gui-sub-divider"></div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-4" class="gui-label">Smoke Check</label>
+                                                <label for="gui-toggle-4" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-4" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-5" class="gui-label">Visibility Check</label>
+                                                <label for="gui-toggle-5" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-5" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-6" class="gui-label">Flash Check</label>
+                                                <label for="gui-toggle-6" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-6" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Legit Aimbot</div>
+                                        <div class="gui-card">
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Field of View (FOV)</span>
+                                                    <span class="gui-slider-val" data-unit="°">3.5°</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 13.65%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 13.65%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0.1" max="25" step="0.1" value="3.5" data-unit="°">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Smoothing Factor</span>
+                                                    <span class="gui-slider-val">8.5</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 7.58%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 7.58%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="100" step="0.5" value="8.5">
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Smooth Curve</span>
+                                                <select class="gui-select" style="max-width:150px;">
+                                                    <option selected>Progressive (Hybrid)</option>
+                                                    <option>Constant</option>
+                                                    <option>Slow-End</option>
+                                                    <option>Fast-End</option>
+                                                </select>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">FOV Scaling</span>
+                                                <select class="gui-select" style="max-width:150px;">
+                                                    <option selected>Dynamic (Distance)</option>
+                                                    <option>Static (Screen)</option>
+                                                </select>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Target Bone</span>
+                                                <select class="gui-select" style="max-width:150px;">
+                                                    <option selected>Closest to Crosshair</option>
+                                                    <option>Head</option>
+                                                    <option>Neck</option>
+                                                    <option>Chest / Center Mass</option>
+                                                </select>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Aim Mode</span>
+                                                <select class="gui-select" style="max-width:150px;">
+                                                    <option selected>Relative Delta</option>
+                                                    <option>Angle Step</option>
+                                                    <option>Direct Angle</option>
+                                                </select>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Randomization</span>
+                                                <select class="gui-select" style="max-width:150px;">
+                                                    <option selected>Micro-jitter</option>
+                                                    <option>Curved Path</option>
+                                                    <option>None</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Recoil Compensation (RCS)</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-7" class="gui-label">Enable RCS</label>
+                                                <label for="gui-toggle-7" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-7" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Pitch Scale (X)</span>
+                                                    <span class="gui-slider-val" data-unit="x">1.00x</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 50.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 50.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="2" step="0.05" value="1.00" data-unit="x">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Yaw Scale (Y)</span>
+                                                    <span class="gui-slider-val" data-unit="x">1.00x</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 50.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 50.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="2" step="0.05" value="1.00" data-unit="x">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>RCS Smoothness</span>
+                                                    <span class="gui-slider-val">5.0</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 21.05%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 21.05%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="20" step="0.5" value="5.0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Seed-Aware Triggerbot</div>
+                                        <div class="gui-card">
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Hitchance Verification</span>
+                                                    <span class="gui-slider-val" data-unit="%">84%</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 84.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 84.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="100" step="1" value="84" data-unit="%">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Noscope Hitchance</span>
+                                                    <span class="gui-slider-val" data-unit="%">60%</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 60.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 60.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="100" step="1" value="60" data-unit="%">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Delay Before Shot</span>
+                                                    <span class="gui-slider-val" data-unit=" ms">35 ms</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 17.5%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 17.5%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="200" step="5" value="35" data-unit=" ms">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Hitbox Scale</span>
+                                                    <span class="gui-slider-val" data-unit="x">0.95x</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 64.29%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 64.29%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0.5" max="1.2" step="0.05" value="0.95" data-unit="x">
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-8" class="gui-label">Burst Fire Mode</label>
+                                                <label for="gui-toggle-8" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-8" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Target Hitboxes</span>
+                                                <select class="gui-select" style="max-width:150px;">
+                                                    <option selected>All Groups</option>
+                                                    <option>Head &amp; Chest</option>
+                                                    <option>Head Only</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. VISUALS TAB (Matches uploaded image exactly) -->
+                        <div class="gui-tab-view active" id="tab-view-visuals">
+                            <div class="gui-sections-grid">
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Chams</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <div>
+                                                    <span class="gui-label">Visible Material</span>
+                                                    <span class="gui-label-sub">Enemy player surface</span>
+                                                </div>
+                                                <div class="gui-color-dot" style="background:#8cb89c;" title="Visible Color"></div>
+                                            </div>
+                                            <select class="gui-select">
+                                                <option>Disabled</option>
+                                                <option selected>Metallic</option>
+                                                <option>Fresnel Lighting</option>
+                                                <option>Flat / Solid</option>
+                                                <option>Glow Blend</option>
+                                                <option>Pulsing Shader</option>
+                                            </select>
+
+                                            <div class="gui-control-row" style="margin-top:0.3rem;">
+                                                <div>
+                                                    <span class="gui-label">Hidden Material</span>
+                                                    <span class="gui-label-sub">Behind walls occlusion</span>
+                                                </div>
+                                                <div class="gui-color-dot" style="background:#5eead4;" title="Hidden Color"></div>
+                                            </div>
+                                            <select class="gui-select">
+                                                <option>Disabled</option>
+                                                <option selected>Glow Blend (Behind Wall)</option>
+                                                <option>Flat / Solid</option>
+                                                <option>Fresnel</option>
+                                                <option>Metallic</option>
+                                            </select>
+
+                                            <div class="gui-control-row" style="margin-top:0.3rem;">
+                                                <div>
+                                                    <span class="gui-label">Occlusion Engine</span>
+                                                </div>
+                                            </div>
+                                            <select class="gui-select">
+                                                <option selected>GPU Depth Prepass</option>
+                                                <option>CPU BVH Raytrace Fallback</option>
+                                            </select>
+
+                                            <div class="gui-slider-group" style="margin-top:0.3rem;">
+                                                <div class="gui-slider-header">
+                                                    <span>Metallic Roughness</span>
+                                                    <span class="gui-slider-val">0.35</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 35.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 35.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="1" step="0.05" value="0.35">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Fresnel Exponent</span>
+                                                    <span class="gui-slider-val">3.0</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 28.57%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 28.57%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="8" step="0.2" value="3.0">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">ESP Overlay</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-9" class="gui-label">Enable</label>
+                                                <label for="gui-toggle-9" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-9" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-10" class="gui-label">Visible Only</label>
+                                                <label for="gui-toggle-10" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-10" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-11" class="gui-label">Occluded</label>
+                                                <label for="gui-toggle-11" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-11" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-12" class="gui-label">Box</label>
+                                                <div style="display:flex; align-items:center; gap:0.65rem;">
+                                                    <div class="gui-color-dot" style="background:#8cb89c;" title="Box Color"></div>
+                                                    <label for="gui-toggle-12" class="gui-switch">
+                                                        <input type="checkbox" id="gui-toggle-12" checked>
+                                                        <span class="gui-switch-track">
+                                                            <span class="gui-switch-knob"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-13" class="gui-label">HP Bar</label>
+                                                <label for="gui-toggle-13" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-13" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-14" class="gui-label">Skeleton</label>
+                                                <div style="display:flex; align-items:center; gap:0.65rem;">
+                                                    <div class="gui-color-dot" style="background:#ffffff;" title="Skeleton Color"></div>
+                                                    <label for="gui-toggle-14" class="gui-switch">
+                                                        <input type="checkbox" id="gui-toggle-14" checked>
+                                                        <span class="gui-switch-track">
+                                                            <span class="gui-switch-knob"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-15" class="gui-label">Player Name</label>
+                                                <label for="gui-toggle-15" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-15" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-16" class="gui-label">Distance</label>
+                                                <label for="gui-toggle-16" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-16" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-17" class="gui-label">Weapon Icons</label>
+                                                <label for="gui-toggle-17" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-17" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-18" class="gui-label">Status Flags (Defuse, Flash, Scope)</label>
+                                                <label for="gui-toggle-18" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-18" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-19" class="gui-label">Step Circles (Sound ESP)</label>
+                                                <label for="gui-toggle-19" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-19">
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Glow &amp; Pulse Outline</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-20" class="gui-label">Outline Glow Effect</label>
+                                                <div style="display:flex; align-items:center; gap:0.65rem;">
+                                                    <div class="gui-color-dot" style="background:#4ade80;" title="Glow Color"></div>
+                                                    <label for="gui-toggle-20" class="gui-switch">
+                                                        <input type="checkbox" id="gui-toggle-20" checked>
+                                                        <span class="gui-switch-track">
+                                                            <span class="gui-switch-knob"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Outline Thickness</span>
+                                                    <span class="gui-slider-val" data-unit=" px">2.0 px</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 20.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 20.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="6" step="0.5" value="2.0" data-unit=" px">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Pulse Frequency</span>
+                                                    <span class="gui-slider-val" data-unit=" Hz">1.5 Hz</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 22.22%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 22.22%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0.5" max="5" step="0.1" value="1.5" data-unit=" Hz">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Bounding Box &amp; Skeleton Styling</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Box Style</span>
+                                                <select class="gui-select" style="max-width:140px;">
+                                                    <option selected>2D Corner</option>
+                                                    <option>2D Full Box</option>
+                                                    <option>3D Bounding Box</option>
+                                                </select>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Box Line Width</span>
+                                                    <span class="gui-slider-val" data-unit=" px">1.5 px</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 16.67%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 16.67%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="4" step="0.5" value="1.5" data-unit=" px">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Skeleton Bone Width</span>
+                                                    <span class="gui-slider-val" data-unit=" px">1.5 px</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 16.67%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 16.67%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="4" step="0.5" value="1.5" data-unit=" px">
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-21" class="gui-label">Joint Connectors</label>
+                                                <label for="gui-toggle-21" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-21" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Overlays &amp; Metrics</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-22" class="gui-label">Armor Bar</label>
+                                                <div style="display:flex; align-items:center; gap:0.65rem;">
+                                                    <div class="gui-color-dot" style="background:#38bdf8;"></div>
+                                                    <label for="gui-toggle-22" class="gui-switch">
+                                                        <input type="checkbox" id="gui-toggle-22" checked>
+                                                        <span class="gui-switch-track">
+                                                            <span class="gui-switch-knob"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-23" class="gui-label">Ammo Bar</label>
+                                                <div style="display:flex; align-items:center; gap:0.65rem;">
+                                                    <div class="gui-color-dot" style="background:#fbbf24;"></div>
+                                                    <label for="gui-toggle-23" class="gui-switch">
+                                                        <input type="checkbox" id="gui-toggle-23" checked>
+                                                        <span class="gui-switch-track">
+                                                            <span class="gui-switch-knob"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Bar Rendering</span>
+                                                <select class="gui-select" style="max-width:140px;">
+                                                    <option selected>Gradient Health</option>
+                                                    <option>Solid Color</option>
+                                                </select>
+                                            </div>
+                                            <div class="gui-sub-divider"></div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-24" class="gui-label">Offscreen Directional Arrows</label>
+                                                <div style="display:flex; align-items:center; gap:0.65rem;">
+                                                    <div class="gui-color-dot" style="background:#f87171;"></div>
+                                                    <label for="gui-toggle-24" class="gui-switch">
+                                                        <input type="checkbox" id="gui-toggle-24" checked>
+                                                        <span class="gui-switch-track">
+                                                            <span class="gui-switch-knob"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Arrow Screen Radius</span>
+                                                    <span class="gui-slider-val" data-unit=" px">280 px</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 36.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 36.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="100" max="600" step="10" value="280" data-unit=" px">
+                                                </div>
+                                            </div>
+                                            <div class="gui-sub-divider"></div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Kill FX Mode</span>
+                                                <select class="gui-select" style="max-width:140px;">
+                                                    <option selected>Grow Sphere</option>
+                                                    <option>Ring Wave</option>
+                                                    <option>Headshot Spark</option>
+                                                    <option>Disabled</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. WORLD TAB -->
+                        <div class="gui-tab-view" id="tab-view-world">
+                            <div class="gui-sections-grid">
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">World Features</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-25" class="gui-label">Custom Crosshair Overlay</label>
+                                                <label for="gui-toggle-25" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-25" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-26" class="gui-label">Bomb Planted Bar &amp; Defusal Timer</label>
+                                                <label for="gui-toggle-26" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-26" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-27" class="gui-label">C4 World Carrier &amp; Site Target</label>
+                                                <label for="gui-toggle-27" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-27" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-28" class="gui-label">Dropped Weapon ESP &amp; Ammo</label>
+                                                <label for="gui-toggle-28" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-28" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-29" class="gui-label">Weapon Spread Circle Indicator</label>
+                                                <label for="gui-toggle-29" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-29" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-30" class="gui-label">Live Grenade Proximity Warnings</label>
+                                                <label for="gui-toggle-30" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-30" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-31" class="gui-label">Molotov / Inferno Fire Spread Radius</label>
+                                                <label for="gui-toggle-31" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-31" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-32" class="gui-label">Smoke Grenade Dispersion Sphere</label>
+                                                <label for="gui-toggle-32" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-32" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Custom Crosshair Configuration</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Crosshair Shape</span>
+                                                <select class="gui-select" style="max-width:140px;">
+                                                    <option selected>Dynamic Recoil</option>
+                                                    <option>Classic Cross</option>
+                                                    <option>Center Dot</option>
+                                                    <option>Circle</option>
+                                                    <option>Chevron</option>
+                                                </select>
+                                                <div class="gui-color-dot" style="background:#4ade80;"></div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Size</span>
+                                                    <span class="gui-slider-val" data-unit=" px">6 px</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 22.22%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 22.22%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="2" max="20" step="1" value="6" data-unit=" px">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Gap</span>
+                                                    <span class="gui-slider-val" data-unit=" px">3 px</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 30.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 30.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="10" step="1" value="3" data-unit=" px">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Thickness</span>
+                                                    <span class="gui-slider-val" data-unit=" px">1.5 px</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 16.67%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 16.67%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="4" step="0.5" value="1.5" data-unit=" px">
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-33" class="gui-label">Follow Recoil Pitch / Yaw</label>
+                                                <label for="gui-toggle-33" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-33" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Pathfinding &amp; Navigation Mesh</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-34" class="gui-label">Show Calculated Path</label>
+                                                <div style="display:flex; align-items:center; gap:0.65rem;">
+                                                    <div class="gui-color-dot" style="background:#e6e4e0;"></div>
+                                                    <label for="gui-toggle-34" class="gui-switch">
+                                                        <input type="checkbox" id="gui-toggle-34" checked>
+                                                        <span class="gui-switch-track">
+                                                            <span class="gui-switch-knob"></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-35" class="gui-label">Show Nav Mesh Wireframe</label>
+                                                <label for="gui-toggle-35" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-35">
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-36" class="gui-label">Destination Waypoint Marker</label>
+                                                <label for="gui-toggle-36" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-36" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Bomb &amp; Round Timers</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-37" class="gui-label">40s Plant Countdown</label>
+                                                <label for="gui-toggle-37" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-37" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-38" class="gui-label">Defusal Progress Bar</label>
+                                                <label for="gui-toggle-38" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-38" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-39" class="gui-label">Defuser Kit Detection</label>
+                                                <label for="gui-toggle-39" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-39" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-40" class="gui-label">Damage Radius Warning</label>
+                                                <label for="gui-toggle-40" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-40" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">World Colors</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">HE Grenade Trajectory</span>
+                                                <div class="gui-color-dot" style="background:#f87171;"></div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Flashbang Trajectory</span>
+                                                <div class="gui-color-dot" style="background:#fde047;"></div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Smoke Grenade Trajectory</span>
+                                                <div class="gui-color-dot" style="background:#cbd5e1;"></div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Molotov Fire Trajectory</span>
+                                                <div class="gui-color-dot" style="background:#fb923c;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 4. GRENADES TAB -->
+                        <div class="gui-tab-view" id="tab-view-grenades">
+                            <div class="gui-sections-grid">
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Trajectories &amp; Physics Prediction</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-41" class="gui-label">Real-time Trajectory Arc</label>
+                                                <label for="gui-toggle-41" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-41" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-42" class="gui-label">Surface Bounce Calculations</label>
+                                                <label for="gui-toggle-42" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-42" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-43" class="gui-label">Detonation Radius Spheres</label>
+                                                <label for="gui-toggle-43" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-43" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-44" class="gui-label">Landing Zone Markers</label>
+                                                <label for="gui-toggle-44" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-44" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Trajectory Line Width</span>
+                                                    <span class="gui-slider-val" data-unit=" px">2.0 px</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 33.33%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 33.33%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="4" step="0.5" value="2.0" data-unit=" px">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Grenade Creator</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Lineup Title</span>
+                                            </div>
+                                            <input type="text" class="gui-select" value="CT Spawn -> Red Cross Smoke" style="cursor:text;">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Type</span>
+                                                <select class="gui-select" style="max-width:140px;">
+                                                    <option selected>Smoke</option>
+                                                    <option>Flashbang</option>
+                                                    <option>HE Grenade</option>
+                                                    <option>Molotov</option>
+                                                </select>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Throw Mechanism</span>
+                                                <select class="gui-select" style="max-width:140px;">
+                                                    <option selected>Jump Throw</option>
+                                                    <option>Standing (Left Click)</option>
+                                                    <option>Middle Click</option>
+                                                    <option>Run-throw</option>
+                                                </select>
+                                            </div>
+                                            <div style="display:flex; gap:0.5rem; margin-top:0.3rem;">
+                                                <button class="gui-btn" style="flex:1;">Capture View Angles</button>
+                                                <button class="gui-btn" style="flex:1; background:var(--accent-primary); color:var(--bg-main);">Save Lineup</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Grenade Helper (grenades.json)</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-45" class="gui-label">Enable Cloud Lineups Database</label>
+                                                <label for="gui-toggle-45" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-45" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Map Database Filter</span>
+                                                <select class="gui-select" style="max-width:140px;">
+                                                    <option selected>de_mirage</option>
+                                                    <option>de_inferno</option>
+                                                    <option>de_nuke</option>
+                                                    <option>de_overpass</option>
+                                                    <option>de_ancient</option>
+                                                    <option>de_anubis</option>
+                                                    <option>de_dust2</option>
+                                                </select>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-46" class="gui-label">Show Current Grenades Only</label>
+                                                <label for="gui-toggle-46" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-46" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Activation Distance</span>
+                                                    <span class="gui-slider-val" data-unit=" units">500 units</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 28.57%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 28.57%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="100" max="1500" step="50" value="500" data-unit=" units">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Aim Assist Snap Radius</span>
+                                                    <span class="gui-slider-val" data-unit="°">4.0°</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 21.43%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 21.43%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="15" step="0.5" value="4.0" data-unit="°">
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-47" class="gui-label">Automatic Jump-Throw Timing</label>
+                                                <label for="gui-toggle-47" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-47" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Grenade Solver (Trajectory Math)</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-48" class="gui-label">Show Solver Target Arc</label>
+                                                <label for="gui-toggle-48" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-48" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Simulation Steps</span>
+                                                    <span class="gui-slider-val">64 ticks</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 33.33%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 33.33%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="32" max="128" step="16" value="64">
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Solution Accuracy</span>
+                                                <span class="gui-label-sub" style="color:var(--green-accent);">Sub-unit precise</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 5. MISC TAB -->
+                        <div class="gui-tab-view" id="tab-view-misc">
+                            <div class="gui-sections-grid">
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Global Settings</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-49" class="gui-label">Team Check</label>
+                                                <label for="gui-toggle-49" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-49" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Movement Helpers</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-50" class="gui-label">Bunnyhop (Auto Jump)</label>
+                                                <label for="gui-toggle-50" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-50" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-51" class="gui-label">Automatic Edge Jump</label>
+                                                <label for="gui-toggle-51" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-51" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-52" class="gui-label">Counter-Strafe Coach</label>
+                                                <label for="gui-toggle-52" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-52" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-53" class="gui-label">Show Speed Gain/Loss Graph</label>
+                                                <label for="gui-toggle-53" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-53" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Hardware Input Injection (evdev)</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Subsystem</span>
+                                                <span class="gui-label-sub" style="color:var(--green-accent);">Linux evdev (/dev/input/event*)</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Hardware Profile</span>
+                                                <span class="gui-label-sub">TI-84 Plus Silver Calculator</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Memory Reader</span>
+                                                <span class="gui-label-sub">process_vm_readv</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Dispatch Latency</span>
+                                                <span class="gui-label-sub" style="color:var(--green-bright);">&lt; 0.1 ms</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Auto Accept Matchmaking</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-54" class="gui-label">Enabled</label>
+                                                <label for="gui-toggle-54" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-54" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-55" class="gui-label">Show Target Indicator</label>
+                                                <label for="gui-toggle-55" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-55" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Target Position X</span>
+                                                    <span class="gui-slider-val" data-unit="%">50.0%</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 50.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 50.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="100" step="0.5" value="50.0" data-unit="%">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Target Position Y</span>
+                                                    <span class="gui-slider-val" data-unit="%">50.0%</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 50.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 50.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="100" step="0.5" value="50.0" data-unit="%">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Accept Delay</span>
+                                                    <span class="gui-slider-val" data-unit=" ms">1200 ms</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 24.0%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 24.0%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0" max="5000" step="100" value="1200" data-unit=" ms">
+                                                </div>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Mouse Smoothing</span>
+                                                    <span class="gui-slider-val">12.0</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 22.45%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 22.45%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="1" max="50" step="1" value="12.0">
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-56" class="gui-label">Progressive Smooth &amp; Human Path</label>
+                                                <label for="gui-toggle-56" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-56" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-57" class="gui-label">Natural Overshoot Emulation</label>
+                                                <label for="gui-toggle-57" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-57" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Overlays &amp; Spectator List</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-58" class="gui-label">Spectator List</label>
+                                                <label for="gui-toggle-58" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-58" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-59" class="gui-label">Keybinds Viewer</label>
+                                                <label for="gui-toggle-59" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-59" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Keybinds Mapping</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Jump Key</span>
+                                                <button class="gui-btn">Space</button>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Crouch Key</span>
+                                                <button class="gui-btn">LCTRL</button>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Menu Toggle</span>
+                                                <button class="gui-btn">INSERT</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6. CONFIG TAB -->
+                        <div class="gui-tab-view" id="tab-view-config">
+                            <div class="gui-sections-grid">
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Profile Management</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Available Configurations</span>
+                                            </div>
+                                            <select class="gui-select" size="4" style="height:120px;">
+                                                <option selected>legit_premier.json</option>
+                                                <option>movement_surf.json</option>
+                                                <option>competitive_faceit.json</option>
+                                                <option>hvhh_test.json</option>
+                                            </select>
+
+                                            <div class="gui-control-row" style="margin-top:0.4rem;">
+                                                <span class="gui-label">Configuration Name</span>
+                                            </div>
+                                            <input type="text" class="gui-select" value="legit_premier" style="cursor:text;">
+
+                                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.5rem; margin-top:0.4rem;">
+                                                <button class="gui-btn">Load Config</button>
+                                                <button class="gui-btn" style="background:var(--accent-primary); color:var(--bg-main);">Save Config</button>
+                                                <button class="gui-btn">Set Default</button>
+                                                <button class="gui-btn" style="color:#f87171;">Delete Profile</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">GUI Preferences &amp; Scale</div>
+                                        <div class="gui-card">
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Menu DPI Scale</span>
+                                                    <span class="gui-slider-val" data-unit="x">1.0x</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 16.67%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 16.67%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="0.8" max="2.0" step="0.1" value="1.0" data-unit="x">
+                                                </div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-60" class="gui-label">VSync Synchronization</label>
+                                                <label for="gui-toggle-60" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-60" checked>
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="gui-slider-group">
+                                                <div class="gui-slider-header">
+                                                    <span>Menu Refresh Rate Limit</span>
+                                                    <span class="gui-slider-val" data-unit=" FPS">144 FPS</span>
+                                                </div>
+                                                <div class="gui-slider-wrapper">
+                                                    <div class="gui-slider-track">
+                                                        <div class="gui-slider-fill" style="width: 54.29%;"></div>
+                                                        <div class="gui-slider-thumb" style="left: 54.29%;"></div>
+                                                    </div>
+                                                    <input type="range" class="gui-range" min="30" max="240" step="10" value="144" data-unit=" FPS">
+                                                </div>
+                                            </div>
+                                            <div class="gui-sub-divider"></div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Theme Primary Accent</span>
+                                                <div class="gui-color-dot" style="background:#e6e4e0;"></div>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Card Background Tone</span>
+                                                <div class="gui-color-dot" style="background:#221f1d;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 7. DEBUG TAB -->
+                        <div class="gui-tab-view" id="tab-view-debug">
+                            <div class="gui-sections-grid">
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">VPK Parser &amp; Occlusion Engine</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">VPK Parser Status</span>
+                                                <span class="gui-label-sub" style="color:var(--green-bright);">Cached (pak01_dir.vpk)</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Map Geometry Cache</span>
+                                                <span class="gui-label-sub">142,850 polys</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">GPU Depth Prepass</span>
+                                                <span class="gui-label-sub" style="color:var(--green-bright);">FBO Active (DEPTH32F)</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">CPU BVH Raytrace</span>
+                                                <span class="gui-label-sub">18,420 nodes</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <label for="gui-toggle-61" class="gui-label">Draw Map Wireframe</label>
+                                                <label for="gui-toggle-61" class="gui-switch">
+                                                    <input type="checkbox" id="gui-toggle-61">
+                                                    <span class="gui-switch-track">
+                                                        <span class="gui-switch-knob"></span>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Memory Reader &amp; Bridge</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Ingestion Mode</span>
+                                                <span class="gui-label-sub">Live Mode (/proc/[pid]/mem)</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Remote Process</span>
+                                                <span class="gui-label-sub">cs2 (PID 31428)</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Local TPS Rate</span>
+                                                <span class="gui-label-sub">64.0 / 64.0</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Schema Offsets</span>
+                                                <span class="gui-label-sub" style="color:var(--green-bright);">Dynamically Resolved</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="gui-section-col">
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">Hardware &amp; Performance</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Graphics API</span>
+                                                <span class="gui-label-sub">OpenGL 3.3 Core Profile</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Overlay Frame Time</span>
+                                                <span class="gui-label-sub" style="color:var(--green-bright);">0.42 ms</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Menu Frame Time</span>
+                                                <span class="gui-label-sub" style="color:var(--green-bright);">0.15 ms</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">Shared GL Contexts</span>
+                                                <span class="gui-label-sub" style="color:var(--green-bright);">Initialized</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gui-section-group">
+                                        <div class="gui-section-header">ConVar Inspector</div>
+                                        <div class="gui-card">
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">sv_cheats</span>
+                                                <span class="gui-label-sub">0</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">mp_c4timer</span>
+                                                <span class="gui-label-sub">40</span>
+                                            </div>
+                                            <div class="gui-control-row">
+                                                <span class="gui-label">cl_interp</span>
+                                                <span class="gui-label-sub">0.015625</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture & Core Features -->
+    <section id="features" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Engineering</span>
+                <h2 class="section-title">High-Performance External Architecture</h2>
+                <p class="section-subtitle">
+                    Engineered from the ground up for modern Linux systems. Zero code injection, low overhead, and evdev hardware input simulation.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">GPU-Skinned 3D Chams</h3>
+                    <p class="feature-desc">
+                        Renders directly onto parsed VMDL player skeletal geometry with shaders for Metallic, Fresnel, Flat, and Pulsing styles with zero-allocation GL passes.
+                    </p>
+                    <ul class="feature-list">
+                        <li>OpenGL 3.3 Compatibility Profile</li>
+                        <li>Dynamic bone matrix interpolation</li>
+                        <li>Customizable visible vs hidden shaders</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m8 2 1.88 1.88"/>
+                            <path d="M14.12 3.88 16 2"/>
+                            <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13"/>
+                            <path d="M12 20v-9"/>
+                            <path d="M14 7a4 4 0 0 1 4 4v3a6 6 0 0 1-12 0v-3a4 4 0 0 1 4-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Dual-Stage Occlusion Engine</h3>
+                    <p class="feature-desc">
+                        Utilizes a GPU Depth Prepass rendering actual BSP/world geometry for pixel-perfect wall occlusion, with multi-threaded CPU BVH raytracing fallback.
+                    </p>
+                    <ul class="feature-list">
+                        <li>GPU Depth buffer rendering</li>
+                        <li>Multi-threaded CPU BVH raycaster</li>
+                        <li>Automated map polygon caching</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="22" x2="18" y1="12" y2="12"/>
+                            <line x1="6" x2="2" y1="12" y2="12"/>
+                            <line x1="12" x2="12" y1="6" y2="2"/>
+                            <line x1="12" x2="12" y1="22" y2="18"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Legit Aim &amp; Triggerbot</h3>
+                    <p class="feature-desc">
+                        Natural mouse movement synthesis using progressive curve smoothing, FOV limits, dynamic recoil pitch/yaw compensation, and seed-aware hitchance verification.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Seed-aware weapon spread math</li>
+                        <li>Capsule collision hitbox calculation</li>
+                        <li>Target prediction &amp; bone selection</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="13" r="9"/>
+                            <path d="M14.35 4.65 16.3 2.7a2.41 2.41 0 0 1 3.4 0l1.6 1.6a2.4 2.4 0 0 1 0 3.4l-1.95 1.95"/>
+                            <path d="m22 2-1.5 1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Cloud Grenade Assistant</h3>
+                    <p class="feature-desc">
+                        Synchronizes in real time with the static <code>grenades.json</code> cloud database, providing trajectory arcs, landing indicators, and lineup assist for every map.
+                    </p>
+                    <ul class="feature-list">
+                        <li>1,000+ competitive grenade lineups</li>
+                        <li>Bounce physics &amp; detonation radius</li>
+                        <li>Automated map lineup filtering</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/>
+                            <rect x="3" y="14" width="7" height="7" rx="1"/>
+                            <circle cx="17.5" cy="17.5" r="3.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Movement &amp; Strafe Trainer</h3>
+                    <p class="feature-desc">
+                        Physics-aware movement automation: automated edge jump detection, auto-bunnyhop, and real-time counter-strafe efficiency tracking.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Automatic Edge Jump detection</li>
+                        <li>CStrafe coach with gain % metrics</li>
+                        <li>Competitive Auto-Accept matchmaker</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon-wrapper">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M15 8a1 1 0 0 1-1-1V2a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8z"/>
+                            <path d="M20 8v12a2 2 0 0 1-2 2h-4.182"/>
+                            <path d="m3.305 19.53.923-.382"/>
+                            <path d="M4 10.592V4a2 2 0 0 1 2-2h8"/>
+                            <circle cx="7" cy="18" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">evdev Input Emulation</h3>
+                    <p class="feature-desc">
+                        All mouse and keyboard events are dispatched through <code>/dev/input/event*</code> (evdev) spoofed as a Texas Instruments TI-84 Plus Silver Calculator.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Direct evdev driver emulation</li>
+                        <li>No user-space input hooks or X11 fake events</li>
+                        <li>Direct memory reads via process_vm_readv</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Build & Usage Guide -->
+    <section id="build" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Build Instructions</span>
+                <h2 class="section-title">Compiling from Source</h2>
+                <p class="section-subtitle">
+                    Bunnyware compiles natively using standard CMake and modern C++20 compilers (GCC 10+ or Clang 11+).
+                </p>
+            </div>
+
+            <div class="build-tabs-container">
+                <div class="build-nav">
+                    <button class="build-tab-btn active" data-pane="arch">1. Arch Linux</button>
+                    <button class="build-tab-btn" data-pane="debian">2. Debian / Ubuntu</button>
+                    <button class="build-tab-btn" data-pane="compile">3. Build with CMake</button>
+                    <button class="build-tab-btn" data-pane="running">4. Execution Modes</button>
+                    <button class="build-tab-btn" data-pane="hyprland">5. Hyprland Rules</button>
+                </div>
+
+                <!-- Pane 1: Arch Linux -->
+                <div class="build-tab-pane active" id="build-pane-arch">
+                    <p style="color:var(--text-secondary); margin-bottom:1rem;">
+                        Install all required dependencies, compilers, OpenGL, and Wayland libraries via pacman:
+                    </p>
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot dot-red"></span>
+                                <span class="terminal-dot dot-yellow"></span>
+                                <span class="terminal-dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">bash — install-deps-arch.sh</span>
+                            <button class="copy-btn" data-target="code-arch">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <div class="terminal-body">
+                            <code id="code-arch"><span class="code-keyword">sudo</span> pacman -S base-devel cmake pkgconf glfw-x11 glew glm spdlog \
+    wayland wayland-protocols mesa libx11 libxext nlohmann-json python-pytest libevdev</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 2: Debian / Ubuntu -->
+                <div class="build-tab-pane" id="build-pane-debian">
+                    <p style="color:var(--text-secondary); margin-bottom:1rem;">
+                        Install dependencies for Ubuntu 22.04+ or Debian 12+:
+                    </p>
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot dot-red"></span>
+                                <span class="terminal-dot dot-yellow"></span>
+                                <span class="terminal-dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">bash — install-deps-deb.sh</span>
+                            <button class="copy-btn" data-target="code-deb">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <div class="terminal-body">
+                            <code id="code-deb"><span class="code-keyword">sudo</span> apt update &amp;&amp; <span class="code-keyword">sudo</span> apt install -y build-essential cmake pkg-config \
+    libglfw3-dev libglew-dev libglm-dev libspdlog-dev libwayland-dev \
+    wayland-protocols libx11-dev libxext-dev nlohmann-json3-dev libevdev-dev python3-pytest</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 3: CMake Build -->
+                <div class="build-tab-pane" id="build-pane-compile">
+                    <p style="color:var(--text-secondary); margin-bottom:1rem;">
+                        Clone the repository and compile using multi-threaded CMake:
+                    </p>
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot dot-red"></span>
+                                <span class="terminal-dot dot-yellow"></span>
+                                <span class="terminal-dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">bash — build.sh</span>
+                            <button class="copy-btn" data-target="code-compile">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <div class="terminal-body">
+                            <code id="code-compile"><span class="code-comment"># 1. Clone repository</span>
+git clone https://github.com/ilovebunniesbunbun/bunnyware.git
+cd bunnyware
+
+<span class="code-comment"># 2. Configure build environment</span>
+cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+
+<span class="code-comment"># 3. Compile binaries across all CPU cores</span>
+make -j$(nproc) -C build</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 4: Running -->
+                <div class="build-tab-pane" id="build-pane-running">
+                    <p style="color:var(--text-secondary); margin-bottom:1rem;">
+                        Launch live production mode (attaches directly to CS2) or offline shared memory simulation mode:
+                    </p>
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot dot-red"></span>
+                                <span class="terminal-dot dot-yellow"></span>
+                                <span class="terminal-dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">bash — run.sh</span>
+                            <button class="copy-btn" data-target="code-run">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <div class="terminal-body">
+                            <code id="code-run"><span class="code-comment"># Mode A: Production Live Mode (requires root / input group for evdev &amp; memory reads)</span>
+<span class="code-keyword">sudo</span> ./build/bunnyware
+
+<span class="code-comment"># Mode B: Offline Simulation / Test Mode (no root required)</span>
+BUNNYWARE_SHM_NAME="/bunnyware_shm_bridge" ./build/bunnyware</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pane 5: Hyprland Window Rules -->
+                <div class="build-tab-pane" id="build-pane-hyprland">
+                    <p style="color:var(--text-secondary); margin-bottom:1rem;">
+                        Add this window rule to your <code>hyprland.conf</code> to make the overlay click-through, non-focus-stealing, and pinned on top:
+                    </p>
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="terminal-dot dot-red"></span>
+                                <span class="terminal-dot dot-yellow"></span>
+                                <span class="terminal-dot dot-green"></span>
+                            </div>
+                            <span class="terminal-title">hyprland.conf — windowrulev2</span>
+                            <button class="copy-btn" data-target="code-hypr">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                                </svg>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <div class="terminal-body">
+                            <code id="code-hypr"><span class="code-comment"># Bunnyware Overlay Window Rules (Modern Hyprland v2)</span>
+windowrulev2 = float, class:^(bunnyware.overlay)$
+windowrulev2 = pin, class:^(bunnyware.overlay)$
+windowrulev2 = size 100% 100%, class:^(bunnyware.overlay)$
+windowrulev2 = move 0 0, class:^(bunnyware.overlay)$
+windowrulev2 = nofocus, class:^(bunnyware.overlay)$
+windowrulev2 = noblur, class:^(bunnyware.overlay)$
+windowrulev2 = noshadow, class:^(bunnyware.overlay)$
+windowrulev2 = noanim, class:^(bunnyware.overlay)$
+windowrulev2 = borderwidth 0, class:^(bunnyware.overlay)$
+windowrulev2 = suppressevent maximize, class:^(bunnyware.overlay)$</code>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section id="downloads" class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Releases</span>
+                <h2 class="section-title">Download Binaries &amp; Releases</h2>
+                <p class="section-subtitle">
+                    Pre-compiled standalone Linux x86_64 binaries ready to launch.
+                </p>
+            </div>
+
+            <div class="releases-grid">
+                <div class="release-main-card">
+                    <div class="release-header">
+                        <div class="release-tag-row">
+                            <span class="release-version">bunnyware v2.0.0</span>
+                            <span class="badge-latest">Latest Build</span>
+                        </div>
+                        <span class="release-date">Release Archive</span>
+                    </div>
+
+                    <ul class="release-meta-list">
+                        <li><strong>Platform:</strong> Linux x86_64 (glibc 2.33+, Arch, Ubuntu, Fedora, Debian)</li>
+                        <li><strong>Architectures:</strong> Dual-Window Dear ImGui + Transparent OpenGL Overlay</li>
+                        <li><strong>Input Subsystem:</strong> Linux evdev (/dev/input/event*)</li>
+                        <li><strong>Included Assets:</strong> VPK LZ4 model parsers, font cache, grenade profiles</li>
+                    </ul>
+
+                    <div class="release-download-actions">
+                        <a href="https://github.com/ilovebunniesbunbun/bunnyware/releases" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>Download v2.0.0 (Linux x86_64)</span>
+                        </a>
+                        <a href="https://github.com/ilovebunniesbunbun/bunnyware" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                            </svg>
+                            <span>Browse Source Code</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="side-info-card">
+                    <h4>Prerequisites &amp; Permissions</h4>
+                    <p>
+                        To run the binary directly, extract the tarball and launch with superuser permissions (or configure an input udev rule) so the engine can emit evdev hardware events and read <code>process_vm_readv</code>:
+                    </p>
+                    <div class="terminal-card" style="margin:0;">
+                        <div class="terminal-body" style="padding:0.8rem; font-size:0.82rem;">
+                            <code>tar -xzf bunnyware-v2.0.0.tar.gz<br><span class="code-keyword">sudo</span> ./bunnyware</code>
+                        </div>
+                    </div>
+                    <p style="font-size:0.82rem; color:var(--text-muted);">
+                        Tip: Open the ImGui menu with the INSERT key at any time to switch weapon profiles, tune smoothing curves, or adjust occlusion shaders.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Cloud Lineup Database Callout -->
+            <div class="cloud-nades-banner">
+                <div class="cloud-nades-info">
+                    <div class="cloud-nades-title">
+                        <img src="rabbit-silhouette.svg" alt="logo" style="width:22px; height:22px;">
+                        <span>Built-in Cloud Grenade Database (grenades.json)</span>
+                    </div>
+                    <p class="cloud-nades-desc">
+                        Bunnyware automatically synchronizes competitive grenade trajectories from <code>https://bunnyware.fun/grenades.json</code>. You can inspect or contribute lineups directly.
+                    </p>
+                </div>
+                <a href="grenades.json" target="_blank" class="btn-secondary" style="white-space:nowrap;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                    <span>View Raw Database</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-brand-header">
+                        <img src="rabbit-silhouette.svg" alt="bunnyware logo">
+                        <span>bunnyware</span>
+                    </div>
+                    <p class="footer-desc">
+                        A high-performance external utility for Counter-Strike 2 on Linux. Designed for minimal overhead and seamless desktop integration.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Showcase</h5>
+                    <ul class="footer-links">
+                        <li><a href="#overview" class="footer-link">Overview</a></li>
+                        <li><a href="#gui-showcase" class="footer-link">GUI Showcase</a></li>
+                        <li><a href="#features" class="footer-link">Architecture</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Developer</h5>
+                    <ul class="footer-links">
+                        <li><a href="#build" class="footer-link">Build Instructions</a></li>
+                        <li><a href="#downloads" class="footer-link">Releases &amp; Binaries</a></li>
+                        <li><a href="https://github.com/ilovebunniesbunbun/bunnyware" target="_blank" rel="noopener noreferrer" class="footer-link">Source Repository</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Data &amp; Cloud</h5>
+                    <ul class="footer-links">
+                        <li><a href="grenades.json" target="_blank" class="footer-link">grenades.json</a></li>
+                        <li><a href="rabbit-silhouette.svg" target="_blank" class="footer-link">rabbit-silhouette.svg</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 bunnyware.fun. All rights reserved.</span>
+                <span>Linux CS2 External Utility.</span>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>
