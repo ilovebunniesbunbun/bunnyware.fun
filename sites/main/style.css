@@ -445,23 +445,7 @@ img, svg {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.7rem;
-}
-
-.section-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--green-accent);
-    padding: 0;
-    background: none;
-    border: none;
-    border-radius: 0;
+    gap: 0.65rem;
 }
 
 .section-title {
