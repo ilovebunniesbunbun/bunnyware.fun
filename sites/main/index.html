@@ -111,10 +111,7 @@
     <section id="gui-showcase" class="section">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">Dear ImGui Control Panel</h2>
-                <p class="section-subtitle">
-                    Full replica of the standalone settings menu running alongside the transparent game overlay with shared OpenGL contexts. All 7 configuration categories and options are functional below.
-                </p>
+                <h2 class="section-title">Menu Preview</h2>
             </div>
 
             <!-- Authentic Replica of Bunnyware Window -->
@@ -1746,7 +1743,7 @@
             <div class="section-header">
                 <h2 class="section-title">Read-Only External</h2>
                 <p class="section-subtitle">
-                    Zero code injection and zero memory writes. State is ingested purely through Linux process_vm_readv, while visual overlays run in a completely isolated OpenGL context and input is dispatched via kernel evdev devices.
+                    Zero code injection and zero memory writes. Operates strictly via process_vm_readv with kernel evdev input.
                 </p>
             </div>
 
