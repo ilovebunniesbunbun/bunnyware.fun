@@ -33,7 +33,7 @@
     /* Dear ImGui Rounding */
     --panel-rounding: 6px;
     --frame-rounding: 5px;
-    --pill-rounding: 9999px;
+    --subtle-rounding: 4px;
 
     /* Clean, Modern Fonts matching Bunnyware GUI (Fira Sans / Tahoma) */
     --font-primary: 'Fira Sans', 'Noto Sans', Tahoma, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -277,7 +277,7 @@ img, svg {
     font-size: 0.78rem;
     font-weight: 600;
     padding: 0.25rem 0.7rem;
-    border-radius: var(--pill-rounding);
+    border-radius: var(--subtle-rounding);
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
     color: var(--text-secondary);
@@ -374,50 +374,18 @@ img, svg {
     align-items: center;
 }
 
-.hero-art-card {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-subtle);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
-}
-
-.hero-art-card::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: 13px;
-    padding: 1px;
-    background: linear-gradient(135deg, rgba(230, 228, 224, 0.18), transparent 60%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-}
-
 .hero-art-logo {
-    width: 140px;
-    height: 140px;
-    filter: drop-shadow(0 0 20px rgba(140, 184, 156, 0.35));
+    width: 220px;
+    height: 220px;
+    max-width: 100%;
+    filter: drop-shadow(0 0 35px rgba(140, 184, 156, 0.28));
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+    user-select: none;
 }
 
-.hero-art-caption {
-    margin-top: 1.5rem;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-align: center;
-    letter-spacing: 0.5px;
-}
-
-.hero-art-caption span {
-    color: var(--green-accent);
+.hero-art-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 45px rgba(140, 184, 156, 0.45));
 }
 
 /* Stats Bar */
@@ -472,11 +440,11 @@ img, svg {
 }
 
 .section-header {
-    text-align: center;
+    text-align: right;
     margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     gap: 0.7rem;
 }
 
@@ -484,15 +452,16 @@ img, svg {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.8px;
+    letter-spacing: 2px;
     color: var(--green-accent);
-    padding: 0.18rem 0.75rem;
-    background: var(--green-bg-subtle);
-    border: 1px solid var(--green-border-subtle);
-    border-radius: var(--pill-rounding);
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
 }
 
 .section-title {
@@ -500,6 +469,7 @@ img, svg {
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.6px;
+    text-align: right;
 }
 
 .section-subtitle {
@@ -507,6 +477,7 @@ img, svg {
     color: var(--text-secondary);
     max-width: 650px;
     line-height: 1.6;
+    text-align: right;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -1220,10 +1191,12 @@ img, svg {
 
 .badge-latest {
     font-size: 0.72rem;
+    font-family: var(--font-mono);
     font-weight: 600;
     text-transform: uppercase;
-    padding: 0.18rem 0.55rem;
-    border-radius: var(--pill-rounding);
+    letter-spacing: 0.5px;
+    padding: 0.15rem 0.55rem;
+    border-radius: 3px;
     background: var(--green-bg-subtle);
     color: var(--green-bright);
     border: 1px solid var(--green-border-subtle);
@@ -1275,41 +1248,6 @@ img, svg {
     font-size: 0.88rem;
     color: var(--text-secondary);
     line-height: 1.6;
-}
-
-/* Cloud Grenades Banner */
-.cloud-nades-banner {
-    background: linear-gradient(135deg, rgba(34, 31, 29, 0.9), rgba(20, 18, 17, 0.95));
-    border: 1px solid var(--green-border-subtle);
-    border-radius: var(--panel-rounding);
-    padding: 1.8rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.8rem;
-    margin-top: 1.5rem;
-    width: 100%;
-}
-
-.cloud-nades-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
-
-.cloud-nades-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-.cloud-nades-desc {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    max-width: 600px;
 }
 
 /* Footer */
@@ -1490,10 +1428,6 @@ img, svg {
     }
     .features-grid {
         grid-template-columns: 1fr;
-    }
-    .cloud-nades-banner {
-        flex-direction: column;
-        align-items: flex-start;
     }
     .footer-top {
         grid-template-columns: 1fr;

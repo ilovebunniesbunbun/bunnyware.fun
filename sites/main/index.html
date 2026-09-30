@@ -23,7 +23,6 @@
                 <li><a href="#features" class="nav-link">Architecture</a></li>
                 <li><a href="#build" class="nav-link">How to Build</a></li>
                 <li><a href="#downloads" class="nav-link">Downloads</a></li>
-                <li><a href="grenades.json" class="nav-link" target="_blank">grenades.json</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -81,12 +80,7 @@
             </div>
 
             <div class="hero-right">
-                <div class="hero-art-card">
-                    <img src="rabbit-silhouette.svg" alt="bunnyware emblem" class="hero-art-logo">
-                    <div class="hero-art-caption">
-                        BUNNYWARE EXTERNAL <span>CS2 V2.0</span>
-                    </div>
-                </div>
+                <img src="rabbit-silhouette.svg" alt="bunnyware logo" class="hero-art-logo">
             </div>
         </div>
     </header>
@@ -104,7 +98,7 @@
             </div>
             <div class="stat-item">
                 <div class="stat-value">1,000+</div>
-                <div class="stat-label">Cloud Lineups (grenades.json)</div>
+                <div class="stat-label">Cloud Grenade Lineups</div>
             </div>
             <div class="stat-item">
                 <div class="stat-value">Wayland &amp; X11</div>
@@ -117,7 +111,7 @@
     <section id="gui-showcase" class="section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-tag">Interactive Preview</span>
+                <span class="section-tag">// INTERACTIVE PREVIEW</span>
                 <h2 class="section-title">Dear ImGui Control Panel</h2>
                 <p class="section-subtitle">
                     Full replica of the standalone settings menu running alongside the transparent game overlay with shared OpenGL contexts. All 7 configuration categories and options are functional below.
@@ -1224,7 +1218,7 @@
 
                                 <div class="gui-section-col">
                                     <div class="gui-section-group">
-                                        <div class="gui-section-header">Grenade Helper (grenades.json)</div>
+                                        <div class="gui-section-header">Grenade Helper</div>
                                         <div class="gui-card">
                                             <div class="gui-control-row">
                                                 <label for="gui-toggle-45" class="gui-label">Enable Cloud Lineups Database</label>
@@ -1751,10 +1745,10 @@
     <section id="features" class="section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-tag">Engineering</span>
-                <h2 class="section-title">High-Performance External Architecture</h2>
+                <span class="section-tag">// ARCHITECTURE</span>
+                <h2 class="section-title">Read-Only External</h2>
                 <p class="section-subtitle">
-                    Engineered from the ground up for modern Linux systems. Zero code injection, low overhead, and evdev hardware input simulation.
+                    Zero code injection and zero memory writes. State is ingested purely through Linux process_vm_readv, while visual overlays run in a completely isolated OpenGL context and input is dispatched via kernel evdev devices.
                 </p>
             </div>
 
@@ -1829,7 +1823,7 @@
                     </div>
                     <h3 class="feature-title">Cloud Grenade Assistant</h3>
                     <p class="feature-desc">
-                        Synchronizes in real time with the static <code>grenades.json</code> cloud database, providing trajectory arcs, landing indicators, and lineup assist for every map.
+                        Synchronizes in real time with the cloud lineup database, providing trajectory arcs, landing indicators, and lineup assist for every map.
                     </p>
                     <ul class="feature-list">
                         <li>1,000+ competitive grenade lineups</li>
@@ -1885,7 +1879,7 @@
     <section id="build" class="section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-tag">Build Instructions</span>
+                <span class="section-tag">// BUILD GUIDE</span>
                 <h2 class="section-title">Compiling from Source</h2>
                 <p class="section-subtitle">
                     Bunnyware compiles natively using standard CMake and modern C++20 compilers (GCC 10+ or Clang 11+).
@@ -2068,7 +2062,7 @@ windowrulev2 = suppressevent maximize, class:^(bunnyware.overlay)$</code>
     <section id="downloads" class="section">
         <div class="section-container">
             <div class="section-header">
-                <span class="section-tag">Releases</span>
+                <span class="section-tag">// RELEASES</span>
                 <h2 class="section-title">Download Binaries &amp; Releases</h2>
                 <p class="section-subtitle">
                     Pre-compiled standalone Linux x86_64 binaries ready to launch.
@@ -2125,28 +2119,6 @@ windowrulev2 = suppressevent maximize, class:^(bunnyware.overlay)$</code>
                     </p>
                 </div>
             </div>
-
-            <!-- Cloud Lineup Database Callout -->
-            <div class="cloud-nades-banner">
-                <div class="cloud-nades-info">
-                    <div class="cloud-nades-title">
-                        <img src="rabbit-silhouette.svg" alt="logo" style="width:22px; height:22px;">
-                        <span>Built-in Cloud Grenade Database (grenades.json)</span>
-                    </div>
-                    <p class="cloud-nades-desc">
-                        Bunnyware automatically synchronizes competitive grenade trajectories from <code>https://bunnyware.fun/grenades.json</code>. You can inspect or contribute lineups directly.
-                    </p>
-                </div>
-                <a href="grenades.json" target="_blank" class="btn-secondary" style="white-space:nowrap;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14 2 14 8 20 8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                    </svg>
-                    <span>View Raw Database</span>
-                </a>
-            </div>
         </div>
     </section>
 
@@ -2183,10 +2155,10 @@ windowrulev2 = suppressevent maximize, class:^(bunnyware.overlay)$</code>
                 </div>
 
                 <div class="footer-col">
-                    <h5>Data &amp; Cloud</h5>
+                    <h5>Resources</h5>
                     <ul class="footer-links">
-                        <li><a href="grenades.json" target="_blank" class="footer-link">grenades.json</a></li>
-                        <li><a href="rabbit-silhouette.svg" target="_blank" class="footer-link">rabbit-silhouette.svg</a></li>
+                        <li><a href="rabbit-silhouette.svg" target="_blank" class="footer-link">Brand Emblem (SVG)</a></li>
+                        <li><a href="https://github.com/ilovebunniesbunbun/bunnyware/releases" target="_blank" rel="noopener noreferrer" class="footer-link">Releases Archive</a></li>
                     </ul>
                 </div>
             </div>
