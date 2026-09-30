@@ -440,11 +440,11 @@ img, svg {
 }
 
 .section-header {
-    text-align: right;
+    text-align: left;
     margin-bottom: 3rem;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 0.7rem;
 }
 
@@ -469,7 +469,7 @@ img, svg {
     font-weight: 700;
     color: var(--text-primary);
     letter-spacing: -0.6px;
-    text-align: right;
+    text-align: left;
 }
 
 .section-subtitle {
@@ -477,7 +477,7 @@ img, svg {
     color: var(--text-secondary);
     max-width: 650px;
     line-height: 1.6;
-    text-align: right;
+    text-align: left;
 }
 
 /* ─────────────────────────────────────────────────────────────
