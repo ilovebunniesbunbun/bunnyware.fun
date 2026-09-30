@@ -1882,11 +1882,10 @@
 
             <div class="build-tabs-container">
                 <div class="build-nav">
-                    <button class="build-tab-btn active" data-pane="arch">1. Arch Linux</button>
-                    <button class="build-tab-btn" data-pane="debian">2. Debian / Ubuntu</button>
-                    <button class="build-tab-btn" data-pane="compile">3. Build with CMake</button>
-                    <button class="build-tab-btn" data-pane="running">4. Execution Modes</button>
-                    <button class="build-tab-btn" data-pane="hyprland">5. Hyprland Rules</button>
+                    <button class="build-tab-btn active" data-pane="arch">1. Dependencies (Arch Linux)</button>
+                    <button class="build-tab-btn" data-pane="compile">2. Build with CMake</button>
+                    <button class="build-tab-btn" data-pane="running">3. Execution Modes</button>
+                    <button class="build-tab-btn" data-pane="hyprland">4. Hyprland Rules</button>
                 </div>
 
                 <!-- Pane 1: Arch Linux -->
@@ -1917,36 +1916,7 @@
                     </div>
                 </div>
 
-                <!-- Pane 2: Debian / Ubuntu -->
-                <div class="build-tab-pane" id="build-pane-debian">
-                    <p style="color:var(--text-secondary); margin-bottom:1rem;">
-                        Install dependencies for Ubuntu 22.04+ or Debian 12+:
-                    </p>
-                    <div class="terminal-card">
-                        <div class="terminal-header">
-                            <div class="terminal-dots">
-                                <span class="terminal-dot dot-red"></span>
-                                <span class="terminal-dot dot-yellow"></span>
-                                <span class="terminal-dot dot-green"></span>
-                            </div>
-                            <span class="terminal-title">bash — install-deps-deb.sh</span>
-                            <button class="copy-btn" data-target="code-deb">
-                                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                                </svg>
-                                <span>Copy</span>
-                            </button>
-                        </div>
-                        <div class="terminal-body">
-                            <code id="code-deb"><span class="code-keyword">sudo</span> apt update &amp;&amp; <span class="code-keyword">sudo</span> apt install -y build-essential cmake pkg-config \
-    libglfw3-dev libglew-dev libglm-dev libspdlog-dev libwayland-dev \
-    wayland-protocols libx11-dev libxext-dev nlohmann-json3-dev libevdev-dev python3-pytest</code>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pane 3: CMake Build -->
+                <!-- Pane 2: CMake Build -->
                 <div class="build-tab-pane" id="build-pane-compile">
                     <p style="color:var(--text-secondary); margin-bottom:1rem;">
                         Clone the repository and compile using multi-threaded CMake:
@@ -2073,7 +2043,7 @@ windowrulev2 = suppressevent maximize, class:^(bunnyware.overlay)$</code>
                     </div>
 
                     <ul class="release-meta-list">
-                        <li><strong>Platform:</strong> Linux x86_64 (glibc 2.33+, Arch, Ubuntu, Fedora, Debian)</li>
+                        <li><strong>Platform:</strong> Arch Linux &amp; Arch-based distros (x86_64)</li>
                         <li><strong>Architectures:</strong> Dual-Window Dear ImGui + Transparent OpenGL Overlay</li>
                         <li><strong>Input Subsystem:</strong> Linux evdev (/dev/input/event*)</li>
                         <li><strong>Included Assets:</strong> VPK LZ4 model parsers, font cache, grenade profiles</li>
