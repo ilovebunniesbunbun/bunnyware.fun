@@ -207,7 +207,7 @@
         "modifiers": [],
         "movement_key": null,
         "movement_ticks": 0,
-        "jump": false
+        "jump": true
       }
     },
     {
