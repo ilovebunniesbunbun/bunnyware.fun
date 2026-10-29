@@ -3590,7 +3590,7 @@
         "modifiers": [],
         "movement_key": "w",
         "movement_ticks": 27,
-        "jump": false
+        "jump": true
       }
     },
     {
